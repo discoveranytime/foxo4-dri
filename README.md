@@ -1,0 +1,9 @@
+# FOXO4-DRI — The Senolytic Peptide | Claims vs Evidence — Interactive Infographic
+
+Live site: https://discoveranytime.github.io/foxo4-dri/
+
+An interactive educational infographic about FOXO4-DRI — The Senolytic Peptide | Claims vs Evidence: how it's described in research,
+the evidence landscape, community anecdotes (clearly labeled as unverified stories),
+a glossary, and references.
+
+Educational purposes only — not medical advice. Not a recommendation to use anything.
