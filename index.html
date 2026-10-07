@@ -10,15 +10,15 @@ try{var _t=localStorage.getItem("foxo4-dri-theme");if(_t==="light"||_t==="dark")
 </script>
 <style>
 :root{
-  --bg0:#06070d; --bg1:#000000;
-  --ink:#edf0f9; --muted:#a9b1c9; --faint:#7f88a5;
-  --sky:#e983f9; --sky-deep:#701a75;
-  --teal:#ed99fa; --teal-deep:#1e1b4b;
-  --org:#922c98; --org-deep:#1b1843;
-  --amber:#fbbf24; --rose:#fb7185; --cyan:#f3b9fb;
+  --bg0:#0c060d; --bg1:#000000;
+  --ink:#f7edf9; --muted:#c5a9c9; --faint:#a07fa5;
+  --sky:#818cf8; --sky-deep:#172bf2;
+  --teal:#e879f9; --teal-deep:#d60ef4;
+  --org:#a3e635; --org-deep:#669813;
+  --amber:#2dd4bf; --rose:#818cf8; --cyan:#e879f9;
   --card:#000000; --card2:#000000;
   --line:rgba(255,255,255,.09);
-  --grad:linear-gradient(100deg,#e983f9 5%,#ed99fa 50%,#922c98 95%);
+  --grad:linear-gradient(100deg,#838ef9 5%,#ed99fa 50%,#6f982c 95%);
   --ongrad:#000000;
   --radius:18px;
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -30,15 +30,16 @@ body{font-family:var(--font);background:var(--bg0);color:var(--ink);
   font-size:1.06rem;line-height:1.75;overflow-x:clip;-webkit-font-smoothing:antialiased}
 .bg-grad{position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
-    radial-gradient(900px 620px at 12% -6%, rgba(112, 26, 117,0.288), transparent 60%),
-    radial-gradient(820px 600px at 88% 22%, rgba(27, 25, 70,0.192), transparent 60%),
-    radial-gradient(1000px 800px at 50% 110%, rgba(30, 27, 75,0.192), transparent 62%),
-    radial-gradient(700px 500px at 78% 78%, rgba(251,113,133,0.096), transparent 60%)}
-#dots{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85}
+    radial-gradient(900px 620px at 12% -6%, rgba(26,34,117,0.288), transparent 60%),
+    radial-gradient(820px 600px at 88% 22%, rgba(64,25,70,0.192), transparent 60%),
+    radial-gradient(1000px 800px at 50% 110%, rgba(69,27,75,0.192), transparent 62%),
+    radial-gradient(700px 500px at 78% 78%, rgba(113,126,251,0.096), transparent 60%)}
+#dots{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85;overflow:hidden}
 .orb{position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(90px)}
-.o1{width:520px;height:520px;left:-140px;top:6%;background:radial-gradient(circle,rgba(112, 26, 117,0.24),transparent 70%);animation:drift1 38s ease-in-out infinite alternate}
-.o2{width:460px;height:460px;right:-120px;top:38%;background:radial-gradient(circle,rgba(27, 25, 70,0.192),transparent 70%);animation:drift2 46s ease-in-out infinite alternate}
-.o3{width:430px;height:430px;left:24%;bottom:-160px;background:radial-gradient(circle,rgba(30, 27, 75,0.192),transparent 70%);animation:drift3 54s ease-in-out infinite alternate}
+.o1{width:520px;height:520px;left:-140px;top:6%;background:radial-gradient(circle,rgba(26,34,117,0.24),transparent 70%);animation:drift1 38s ease-in-out infinite alternate}
+.o2{width:460px;height:460px;right:-120px;top:38%;background:radial-gradient(circle,rgba(64,25,70,0.192),transparent 70%);animation:drift2 46s ease-in-out infinite alternate}
+.o3{width:430px;height:430px;left:24%;bottom:-160px;background:radial-gradient(circle,rgba(69,27,75,0.192),transparent 70%);animation:drift3 54s ease-in-out infinite alternate}
+@media(max-width:720px){.o1{width:70vw;height:70vw;left:-22vw}.o2{width:62vw;height:62vw;right:-16vw}.o3{width:58vw;height:58vw;left:21vw;bottom:-18vw}.orb{animation:none}}
 @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(120px,80px)}}
 @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-100px,-70px)}}
 @keyframes drift3{from{transform:translate(0,0)}to{transform:translate(90px,-80px)}}
@@ -63,17 +64,18 @@ body{font-family:var(--font);background:var(--bg0);color:var(--ink);
 #themeToggle .tt-opt.active{background:var(--grad);color:#000000}
 @media(max-width:720px){#themeToggle{top:66px}}
 [data-theme="dark"]{color-scheme:dark}
+html,body{overflow-x:clip}
 /* soft neutral gray light theme — never stark white */
 [data-theme="light"]{
   --bg0:#e8ebf0; --bg1:#eef1f6;
-  --ink:#1b2436; --muted:#4d5871; --faint:#707a93;
-  --sky:#551459; --sky-deep:#191740;
-  --teal:#1b1946; --teal-deep:#151337;
-  --org:#551459; --org-deep:#191740;
-  --amber:#b45309; --rose:#e11d48; --cyan:#4d7c0f;
+  --ink:#321b36; --muted:#6c4d71; --faint:#8e7093;
+  --sky:#1a2ff9; --sky-deep:#04139f;
+  --teal:#da13f9; --teal-deep:#840498;
+  --org:#1a2ff9; --org-deep:#04139f;
+  --amber:#6da60f; --rose:#168577; --cyan:#1a2ff9;
   --card:#f8fafc; --card2:#e9edf3;
-  --line:rgba(15,23,42,.14);
-  --grad:linear-gradient(100deg,#551459,#1b1946,#641768);
+  --line:rgba(38,15,42,.14);
+  --grad:linear-gradient(100deg,#141a59,#401946,#496817);
   --ongrad:#ffffff;
   color-scheme:light;
 }
@@ -83,8 +85,8 @@ body{font-family:var(--font);background:var(--bg0);color:var(--ink);
 [data-theme="light"] .orb{opacity:.5}
 [data-theme="light"] #dots{opacity:.55}
 [data-theme="light"] .bg-grad{opacity:.55}
-nav.chapters{position:sticky;top:0;z-index:50;background:rgba(6,7,13,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-nav.chapters .rail{max-width:1080px;margin:0 auto;padding:.65rem 1rem;display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;padding-right:3.8rem}
+nav.chapters{position:sticky;top:0;z-index:50;background:rgba(12,6,13,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav.chapters .rail{max-width:1280px;margin:0 auto;padding:.65rem 1rem;display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;padding-right:3.8rem}
 nav.chapters .rail::-webkit-scrollbar{display:none}
 nav.chapters a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-size:.82rem;font-weight:600;
   letter-spacing:.04em;padding:.42rem .8rem;border:1px solid var(--line);border-radius:999px;white-space:nowrap;transition:all .25s ease}
@@ -97,7 +99,7 @@ nav.chapters a.active{color:#000000;background:var(--grad);border-color:transpar
   .toc{display:flex;position:fixed;left:0;top:0;bottom:0;width:248px;z-index:45;
     flex-direction:column;justify-content:center;gap:.2rem;
     padding:2rem 1.1rem 2rem 1.4rem;
-    background:rgba(6,7,13,.72);backdrop-filter:blur(14px);border-right:1px solid var(--line)}
+    background:rgba(12,6,13,.72);backdrop-filter:blur(14px);border-right:1px solid var(--line)}
   .toc .brand{font-family:var(--disp);font-weight:800;font-size:.98rem;letter-spacing:-.01em;
     margin-bottom:1.2rem;line-height:1.35;color:var(--ink);
     text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
@@ -119,7 +121,7 @@ nav.chapters a.active{color:#000000;background:var(--grad);border-color:transpar
   .toc .mini-bar{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-top:.55rem;overflow:hidden}
   .toc .mini-bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:99px}
 }
-.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:0 1.25rem}
+.wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 1.25rem}
 section.chapter{padding:4.2rem 0 1rem;scroll-margin-top:84px}
 .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.22em;
   text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
@@ -129,12 +131,12 @@ h2{font-family:var(--disp);font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;le
 h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lede{color:var(--muted);font-size:1.12rem;max-width:44rem;margin-bottom:2rem}
 .lede strong{color:var(--ink)}
-.hero{position:relative;z-index:1;text-align:center;padding:5.5rem 1.25rem 3.5rem;max-width:960px;margin:0 auto}
+.hero{position:relative;z-index:1;text-align:center;padding:5.5rem 1.25rem 3.5rem;max-width:1280px;margin:0 auto}
 .badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:700;letter-spacing:.18em;
   text-transform:uppercase;color:var(--ink);border:1px solid var(--line);background:rgba(255,255,255,.04);
   padding:.55rem 1.1rem;border-radius:999px;margin-bottom:1.6rem}
-.badge .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(251,191,36,.6);animation:pulse 2.2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(251,191,36,.55)}70%{box-shadow:0 0 0 12px rgba(251,191,36,0)}100%{box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+.badge .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(38,249,223,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(38,249,223,.55)}70%{box-shadow:0 0 0 12px rgba(38,249,223,0)}100%{box-shadow:0 0 0 0 rgba(38,249,223,0)}}
 .hero h1{font-family:var(--disp);font-weight:900;letter-spacing:-.03em;line-height:1.02;font-size:clamp(2.4rem,7.5vw,4.8rem);margin-bottom:1.1rem}
 .hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
   background-size:200% auto;animation:sheen 9s ease-in-out infinite}
@@ -187,11 +189,11 @@ h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
   padding:.3rem .7rem;border-radius:8px;margin-top:.25rem}
 .kv .k.s{background:rgba(124,199,255,.12);color:var(--sky);border:1px solid rgba(124,199,255,.35)}
 .kv .k.t{background:rgba(94,234,212,.10);color:var(--teal);border:1px solid rgba(94,234,212,.35)}
-.kv .k.o{background:rgba(251,146,60,.12);color:var(--org);border:1px solid rgba(251,146,60,.35)}
-.kv .k.a{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid rgba(251,191,36,.35)}
-.kv .k.g{background:rgba(251,113,133,.12);color:var(--rose);border:1px solid rgba(251,113,133,.35)}
+.kv .k.o{background:rgba(61,250,226,.12);color:var(--org);border:1px solid rgba(61,250,226,.35)}
+.kv .k.a{background:rgba(38,249,223,.12);color:var(--amber);border:1px solid rgba(38,249,223,.35)}
+.kv .k.g{background:rgba(113,126,251,.12);color:var(--rose);border:1px solid rgba(113,126,251,.35)}
 .kv p{font-size:.99rem}
-.diagram{background:radial-gradient(600px 300px at 50% 0%,rgba(112, 26, 117,.10),transparent 70%),#000000;
+.diagram{background:radial-gradient(600px 300px at 50% 0%,rgba(26,34,117,.10),transparent 70%),#000000;
   border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;margin:0 0 1.4rem;overflow:hidden}
 .diagram svg{display:block;width:100%;height:auto}
 .diagram .cap{text-align:center;color:var(--faint);font-size:.85rem;margin-top:.9rem;letter-spacing:.03em}
@@ -208,14 +210,14 @@ h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .ebar .row .v{font-size:.88rem;color:var(--faint);font-variant-numeric:tabular-nums}
 .ebar .track{height:14px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
 .ebar .fill{height:100%;width:0;border-radius:999px;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
-.in .ebar .fill{width:var(--w)}
+.ebar.in .fill{width:var(--w)}
 .ebar .note{font-size:.85rem;color:var(--faint);margin-top:.45rem}
 .anec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 @media(max-width:720px){.anec-grid{grid-template-columns:1fr}}
 .anec{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;position:relative;overflow:hidden}
 .anec::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
 .anec .stamp{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.12em;
-  color:var(--amber);border:1px solid rgba(251,191,36,.4);background:rgba(251,191,36,.08);
+  color:var(--amber);border:1px solid rgba(38,249,223,.4);background:rgba(38,249,223,.08);
   padding:.28rem .6rem;border-radius:7px;text-transform:uppercase;margin-bottom:.65rem}
 .anec h4{font-size:1.05rem;font-weight:800;margin-bottom:.5rem}
 .anec-head{display:flex;align-items:center;gap:.85rem;margin-bottom:.55rem}
@@ -231,7 +233,7 @@ h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .anec p{color:var(--muted);font-size:.95rem}
 .anec p strong{color:var(--ink)}
 .anec .caveat{margin-top:.8rem;font-size:.82rem;color:var(--faint);border-top:1px dashed var(--line);padding-top:.7rem}
-.folk-note{background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.3);border-radius:var(--radius);
+.folk-note{background:rgba(38,249,223,.06);border:1px solid rgba(38,249,223,.3);border-radius:var(--radius);
   padding:1.2rem 1.4rem;margin-bottom:1.6rem;color:var(--muted);font-size:.98rem}
 .folk-note strong{color:var(--amber)}
 .safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
@@ -242,9 +244,9 @@ h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .scard h4{font-size:1.05rem;font-weight:800;margin-bottom:.5rem}
 .scard p{color:var(--muted);font-size:.95rem}
 .scard p strong{color:var(--ink)}
-.lvl-known .level{background:rgba(251,191,36,.1);color:var(--amber);border:1px solid rgba(251,191,36,.4)}
-.lvl-theory .level{background:rgba(251,146,60,.1);color:var(--org);border:1px solid rgba(251,146,60,.4)}
-.lvl-unknown .level{background:rgba(251,113,133,.1);color:var(--rose);border:1px solid rgba(251,113,133,.4)}
+.lvl-known .level{background:rgba(38,249,223,.1);color:var(--amber);border:1px solid rgba(38,249,223,.4)}
+.lvl-theory .level{background:rgba(61,250,226,.1);color:var(--org);border:1px solid rgba(61,250,226,.4)}
+.lvl-unknown .level{background:rgba(113,126,251,.1);color:var(--rose);border:1px solid rgba(113,126,251,.4)}
 .gloss{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
 .g-item{border-bottom:1px solid var(--line)}
 .g-item:last-child{border-bottom:none}
@@ -265,10 +267,9 @@ h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 @keyframes gaBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 @keyframes gaTilt{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 .g-a{max-height:0;overflow:hidden;transition:max-height .45s ease}
-.g-a .gsci,.g-a .gex{padding:0 1.4rem 1rem;color:var(--muted);font-size:.95rem}
-.g-a .gsci strong,.g-a .gex strong{color:var(--ink)}
+.g-a .gsci{padding:0 1.4rem 1rem;color:var(--muted);font-size:.95rem}
+.g-a .gsci strong{color:var(--ink)}
 .gslabel{display:block;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.35rem}
-.g-a .gex{margin:0 1.4rem 1rem;padding:0 0 0 1rem;border-left:2px solid var(--line)}
 .g-a .plain{margin:0 1.4rem 1.3rem;background:rgba(255,255,255,.035);border:1px dashed rgba(255,255,255,.22);
   border-radius:12px;padding:1rem 1.2rem;font-size:.96rem;color:var(--muted)}
 .g-a .plain b{color:var(--ink)}
@@ -281,7 +282,7 @@ h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .take h4{font-size:1.05rem;font-weight:800;margin-bottom:.4rem}
 .take p{color:var(--muted);font-size:.95rem}
 .take p strong{color:var(--ink)}
-.limits{background:rgba(251,113,133,.05);border:1px solid rgba(251,113,133,.3);border-radius:var(--radius);
+.limits{background:rgba(113,126,251,.05);border:1px solid rgba(113,126,251,.3);border-radius:var(--radius);
   padding:1.4rem 1.6rem;margin-bottom:1.6rem}
 .limits h3{font-family:var(--disp);font-size:1.2rem;font-weight:800;margin-bottom:.7rem;color:var(--rose)}
 .limits ul{list-style:none;display:grid;gap:.6rem}
@@ -322,7 +323,7 @@ table.trial tr td:first-child{color:var(--ink);font-weight:600}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
-  .in .ebar .fill{transition:none}
+  .ebar.in .fill{transition:none}
 }
 
 /* --- ambient motion additions: subtle, additive, non-intrusive --- */
@@ -332,10 +333,84 @@ table.trial tr td:first-child{color:var(--ink);font-weight:600}
 .seqr1{animation:seqGlow 4.5s ease-in-out infinite}
 .seqr2{animation:seqGlow 4.5s ease-in-out .9s infinite}
 .seqr3{animation:seqGlow 4.5s ease-in-out 1.8s infinite}
+.flowseq1{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out infinite}
 .flowseq{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out infinite}
 .flowseq2{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out .9s infinite}
 .flowseq3{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out 1.8s infinite}
+@keyframes seqGlow6{0%,100%{opacity:.35}10%{opacity:1}24%{opacity:.35}}
+.seqr4{animation:seqGlow 4.5s ease-in-out 2.7s infinite}
+.seqr5{animation:seqGlow 4.5s ease-in-out 3.6s infinite}
+.sq6a{animation:seqGlow6 6s ease-in-out infinite}
+.sq6b{animation:seqGlow6 6s ease-in-out 1s infinite}
+.sq6c{animation:seqGlow6 6s ease-in-out 2s infinite}
+.sq6d{animation:seqGlow6 6s ease-in-out 3s infinite}
+.sq6e{animation:seqGlow6 6s ease-in-out 4s infinite}
+.sq6f{animation:seqGlow6 6s ease-in-out 5s infinite}
+.sech{font-size:1.32rem;font-weight:800;color:var(--ink);margin:2.6rem 0 .8rem}
+.sech .sub{display:block;font-size:.9rem;font-weight:600;color:var(--muted);margin-top:.3rem}
+.rate-h{text-align:center;font-size:1.2rem;font-weight:800;color:var(--ink);margin:2.8rem 0 .2rem}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.5rem}
+@media(max-width:720px){.duo{grid-template-columns:1fr}}
+.do,.dont{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem}
+.do h3{color:#34d399;font-size:1.05rem;margin:0 0 .4rem}
+.dont h3{color:#717df8;font-size:1.05rem;margin:0 0 .4rem}
+.do ul,.dont ul{margin:.6rem 0 0 1.1rem;padding:0}
+.do li,.dont li{margin:.5rem 0;color:var(--muted);line-height:1.6;font-size:.94rem}
+.alegend{display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;margin:.4rem 0 1.2rem;font-size:.86rem;color:var(--muted)}
+.alegend .sw{display:inline-block;width:1.6rem;height:0;border-top:3px solid #34d399;vertical-align:middle;margin-right:.4rem}
+.alegend .dw{display:inline-block;width:1.6rem;height:0;border-top:3px dashed #26f9df;vertical-align:middle;margin-right:.4rem}
 
+/* ----- evidence-tier tiles (benefits chapter) ----- */
+.evtimer{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;position:relative;overflow:hidden}
+.evtimer::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--ac,var(--grad))}
+.evtimer.est{--ac:linear-gradient(90deg,#10b981,#a7f3d0)}
+.evtimer.emg{--ac:linear-gradient(90deg,var(--sky-deep),var(--sky))}
+.evtimer.com{--ac:linear-gradient(90deg,var(--amber),#8bfcee)}
+.evtimer h3{font-family:var(--disp);font-size:1.35rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em}
+.evtimer p,.evtimer li{color:var(--muted);font-size:.99rem}
+.evtimer ul{list-style:none;margin-top:.9rem;display:grid;gap:.65rem}
+.evtimer ul li{padding-left:1.5rem;position:relative;color:var(--muted);font-size:.99rem}
+.evtimer ul li::before{content:"▸";position:absolute;left:0;font-weight:800;color:var(--sky)}
+.evtimer.est ul li::before{color:#10b981}
+.evtimer.com ul li::before{color:var(--amber)}
+.evtimer strong{color:var(--ink)}
+.evwrap{display:grid;gap:1.2rem;margin-bottom:1.4rem}
+.evtimer .evbadge{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;padding:.32rem .7rem;border-radius:7px;margin-bottom:.7rem}
+.evtimer .evbadge.est{background:rgba(16,185,129,.12);color:#10b981;border:1px solid rgba(16,185,129,.4)}
+.evtimer .evbadge.emg{background:rgba(129,140,248,.12);color:var(--sky);border:1px solid rgba(129,140,248,.4)}
+.evtimer .evbadge.com{background:rgba(38,249,223,.12);color:var(--amber);border:1px solid rgba(38,249,223,.4)}
+html[data-theme="light"] .evtimer .evbadge.est{color:#047857}
+html[data-theme="light"] .evtimer.est ul li::before{color:#047857}
+/* ----- layman "Think of it this way" tile ----- */
+.layman{position:relative;margin:1.1rem 0;padding:1rem 1.2rem 1rem 3.1rem;background:rgba(129,140,248,.06);
+  border:1px dashed rgba(129,140,248,.35);border-radius:14px;color:var(--muted);font-size:.96rem;line-height:1.65}
+.layman strong{color:var(--ink)}
+.layman .llabel{display:block;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sky);margin-bottom:.35rem}
+.layman .ldot{position:absolute;left:1.15rem;top:1.3rem;width:12px;height:12px;border-radius:50%;background:var(--sky);
+  animation:layPulse 2.4s ease-in-out infinite}
+.layman .ldot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--sky);
+  animation:udotPulse 2.4s ease-out infinite}
+@keyframes layPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.28)}}
+@media (prefers-reduced-motion:reduce){.layman .ldot,.layman .ldot::after{animation:none;opacity:.7}}
+/* ----- who-it-may-suit tiles ----- */
+.suit{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;position:relative;overflow:hidden}
+.suit::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--ac,var(--grad))}
+.suit.yes{--ac:linear-gradient(90deg,#10b981,#a7f3d0)}
+.suit.no{--ac:linear-gradient(90deg,#717efb,#cdd2fe)}
+.suit h3{font-family:var(--disp);font-size:1.35rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em}
+.suit p,.suit li{color:var(--muted);font-size:.99rem}
+.suit ul{list-style:none;margin-top:.9rem;display:grid;gap:.65rem}
+.suit ul li{padding-left:1.5rem;position:relative}
+.suit ul li::before{content:"▸";position:absolute;left:0;font-weight:800}
+.suit.yes ul li::before{color:#10b981}
+.suit.no ul li::before{color:#717efb}
+.suit strong{color:var(--ink)}
+html[data-theme="light"] .suit.yes ul li::before{color:#047857}
+/* ----- bridge line ----- */
+.bridge{margin:1.4rem 0;padding:.95rem 1.15rem;border-left:3px solid var(--sky);background:rgba(129,140,248,.06);border-radius:0 12px 12px 0;color:var(--muted);font-size:.93rem;line-height:1.7}
+.bridge strong{color:var(--ink)}
 /* ===== mini-poll component ===== */
 /* Mini-poll component styles — compact, theme-aware via CSS vars with fallbacks.
    Works inside the TB-500 infographic (which defines --card, --ink, etc.)
@@ -348,7 +423,7 @@ mini-poll { display: block; }
   border-radius: 18px;
   background:
     linear-gradient(var(--card, #000000), var(--card, #000000)) padding-box,
-    linear-gradient(135deg, var(--mpc1, #fdba74), var(--mpc2, #a3e635)) border-box;
+    linear-gradient(135deg, var(--mpc1, #76fbeb), var(--mpc2, #a3e635)) border-box;
   font-family: inherit;
   overflow: hidden;
 }
@@ -357,14 +432,14 @@ mini-poll { display: block; }
   display: flex; align-items: center; gap: .6rem;
   width: 100%; cursor: pointer; text-align: left;
   padding: .75rem 1rem; border: 0; background: transparent;
-  color: var(--muted, #a9b1c9); font-size: .88rem;
+  color: var(--muted, #c5a9c9); font-size: .88rem;
 }
 .mpoll-teaser:hover { background: rgba(255,255,255,.03); }
-.mpoll-teaser:focus-visible { outline: 2px solid var(--amber, #fbbf24); outline-offset: -2px; }
+.mpoll-teaser:focus-visible { outline: 2px solid var(--amber, #26f9df); outline-offset: -2px; }
 .mpoll-teaser-dot {
   flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%;
-  background: var(--mpc1, #fdba74);
-  box-shadow: 0 0 10px var(--mpc1, #fdba74);
+  background: var(--mpc1, #76fbeb);
+  box-shadow: 0 0 10px var(--mpc1, #76fbeb);
   animation: mpulse 2.4s ease-in-out infinite;
 }
 @keyframes mpulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
@@ -372,7 +447,7 @@ mini-poll { display: block; }
   flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .mpoll-teaser-chev {
-  flex: 0 0 auto; transition: transform .2s; color: var(--faint, #7f88a5);
+  flex: 0 0 auto; transition: transform .2s; color: var(--faint, #a07fa5);
 }
 .mpoll.open .mpoll-teaser-chev { transform: rotate(180deg); }
 /* animated expand/collapse */
@@ -390,7 +465,7 @@ mini-poll { display: block; }
 .mpoll.open .mpoll-body { opacity: 1; transform: translateY(0); }
 .mpoll-kicker {
   font-size: .78rem; font-weight: 800; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--muted, #a9b1c9);
+  text-transform: uppercase; color: var(--muted, #c5a9c9);
   margin-bottom: .6rem;
 }
 /* single top-of-page banner (preview mode only) */
@@ -398,7 +473,7 @@ mini-poll { display: block; }
   display: flex; align-items: center; justify-content: center; gap: .6rem;
   max-width: 620px; margin: 0 auto 1.4rem; padding: .6rem 1.2rem;
   border-radius: 999px; font-size: .82rem; font-weight: 700; color: #000000;
-  background: linear-gradient(100deg, var(--acc1, #fdba74), var(--acc2, #a3e635), var(--acc3, #fb923c));
+  background: linear-gradient(100deg, var(--acc1, #76fbeb), var(--acc2, #a3e635), var(--acc3, #3dfae2));
 }
 .mpoll-topbanner-dot {
   flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%;
@@ -408,7 +483,7 @@ mini-poll { display: block; }
 .mpoll-field { border: 0; margin: 0; padding: 0; }
 .mpoll-q {
   font-size: 1.12rem; font-weight: 800; line-height: 1.35;
-  color: var(--ink, #edf0f9); margin-bottom: .9rem; padding: 0;
+  color: var(--ink, #f7edf9); margin-bottom: .9rem; padding: 0;
 }
 .mpoll-opts { display: grid; gap: .55rem; }
 .mpoll-opt {
@@ -416,55 +491,55 @@ mini-poll { display: block; }
   width: 100%; text-align: left; cursor: pointer;
   padding: .72rem .9rem; border-radius: 12px;
   border: 1px solid var(--line, rgba(255,255,255,.09));
-  background: rgba(255,255,255,.03); color: var(--ink, #edf0f9);
+  background: rgba(255,255,255,.03); color: var(--ink, #f7edf9);
   font-size: .95rem; transition: border-color .15s, background .15s, transform .15s;
 }
-.mpoll-opt:hover { border-color: var(--amber, #fbbf24); background: rgba(255,255,255,.05); }
-.mpoll-opt:focus-visible { outline: 2px solid var(--amber, #fbbf24); outline-offset: 2px; }
-.mpoll-opt.sel { border-color: var(--amber, #fbbf24); background: rgba(251,191,36,.10); }
+.mpoll-opt:hover { border-color: var(--amber, #26f9df); background: rgba(255,255,255,.05); }
+.mpoll-opt:focus-visible { outline: 2px solid var(--amber, #26f9df); outline-offset: 2px; }
+.mpoll-opt.sel { border-color: var(--amber, #26f9df); background: rgba(38,249,223,.10); }
 .mpoll-emoji { font-size: 1.25rem; flex: 0 0 auto; }
 .mpoll-label { flex: 1; }
 .mpoll-vote, .mpoll-again {
   display: block; width: 100%; margin-top: .9rem; padding: .8rem;
   border: 0; border-radius: 12px; cursor: pointer;
   font-size: 1rem; font-weight: 800; color: #000000;
-  background: linear-gradient(100deg, var(--acc1, #fdba74), var(--acc2, #a3e635));
+  background: linear-gradient(100deg, var(--acc1, #76fbeb), var(--acc2, #a3e635));
   transition: transform .15s, opacity .15s;
 }
 .mpoll-vote:hover:not(:disabled), .mpoll-again:hover { transform: translateY(-1px); }
 .mpoll-vote:disabled { opacity: .45; cursor: not-allowed; transform: none; }
 .mpoll-note {
-  margin-top: .7rem; font-size: .88rem; color: #fbbf24;
-  border: 1px dashed rgba(251,191,36,.4); border-radius: 10px; padding: .6rem .8rem;
+  margin-top: .7rem; font-size: .88rem; color: #26f9df;
+  border: 1px dashed rgba(38,249,223,.4); border-radius: 10px; padding: .6rem .8rem;
 }
 .mpoll-bars { display: grid; gap: .6rem; margin-top: .4rem; }
 .mpoll-rowtop {
   display: flex; justify-content: space-between; gap: .8rem;
-  font-size: .9rem; color: var(--ink, #edf0f9); margin-bottom: .28rem;
+  font-size: .9rem; color: var(--ink, #f7edf9); margin-bottom: .28rem;
 }
-.mpoll-pct { font-weight: 800; color: var(--muted, #a9b1c9); flex: 0 0 auto; }
-.mpoll-mine { color: var(--amber, #fbbf24); font-weight: 700; font-size: .8rem; }
+.mpoll-pct { font-weight: 800; color: var(--muted, #c5a9c9); flex: 0 0 auto; }
+.mpoll-mine { color: var(--amber, #26f9df); font-weight: 700; font-size: .8rem; }
 .mpoll-track {
   height: 10px; border-radius: 999px; overflow: hidden;
   background: rgba(255,255,255,.07);
 }
 .mpoll-fill {
   height: 100%; width: 0; border-radius: 999px;
-  background: linear-gradient(90deg, var(--acc1, #fdba74), var(--acc2, #a3e635), var(--acc3, #fb923c));
+  background: linear-gradient(90deg, var(--acc1, #76fbeb), var(--acc2, #a3e635), var(--acc3, #3dfae2));
   transition: width .9s cubic-bezier(.22,.8,.3,1);
 }
-.mpoll-row.mine .mpoll-fill { box-shadow: 0 0 10px rgba(251,191,36,.45); }
+.mpoll-row.mine .mpoll-fill { box-shadow: 0 0 10px rgba(38,249,223,.45); }
 .mpoll-total {
-  margin-top: .8rem; font-size: .85rem; color: var(--faint, #7f88a5);
+  margin-top: .8rem; font-size: .85rem; color: var(--faint, #a07fa5);
 }
-.mpoll-sub { margin-top: .8rem; font-size: .9rem; color: var(--muted, #a9b1c9); }
-.mpoll-count { font-weight: 800; color: var(--ink, #edf0f9); font-variant-numeric: tabular-nums; }
+.mpoll-sub { margin-top: .8rem; font-size: .9rem; color: var(--muted, #c5a9c9); }
+.mpoll-count { font-weight: 800; color: var(--ink, #f7edf9); font-variant-numeric: tabular-nums; }
 .mpoll-disc {
   margin-top: .9rem; padding-top: .7rem;
   border-top: 1px dashed var(--line, rgba(255,255,255,.09));
-  font-size: .76rem; line-height: 1.5; color: var(--faint, #7f88a5);
+  font-size: .76rem; line-height: 1.5; color: var(--faint, #a07fa5);
 }
-.mpoll-loading { color: var(--faint, #7f88a5); font-size: .9rem; padding: .6rem 0; }
+.mpoll-loading { color: var(--faint, #a07fa5); font-size: .9rem; padding: .6rem 0; }
 @media (prefers-reduced-motion: reduce) {
   .mpoll-opt, .mpoll-vote, .mpoll-again, .mpoll-fill, .mpoll-teaser-chev,
   .mpoll-bodywrap, .mpoll-body { transition: none; }
@@ -490,7 +565,7 @@ mini-poll { display: block; }
 <svg class="sr-only" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="triGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e983f9"/><stop offset="50%" stop-color="#ed99fa"/><stop offset="100%" stop-color="#922c98"/>
+      <stop offset="0%" stop-color="#838ef9"/><stop offset="50%" stop-color="#ed99fa"/><stop offset="100%" stop-color="#6f982c"/>
     </linearGradient>
   </defs>
 </svg>
@@ -515,14 +590,17 @@ mini-poll { display: block; }
   <a href="#ch2"><span class="n">02</span>Origin Story</a>
   <a href="#ch3"><span class="n">03</span>How It Might Work</a>
   <a href="#ch4"><span class="n">04</span>Evidence Check</a>
-  <a href="#ch5"><span class="n">05</span>What People Say</a>
-  <a href="#ch6"><span class="n">06</span>Risks & Unknowns</a>
-  <a href="#ch7"><span class="n">07</span>Glossary</a>
-  <a href="#ch8"><span class="n">08</span>Takeaways</a>
+  <a href="#ch5"><span class="n">05</span>Community Reports</a>
+  <a href="#ch6"><span class="n">06</span>Senolytic Rivals</a>
+  <a href="#ch7"><span class="n">07</span>Potential Benefits</a>
+  <a href="#ch8"><span class="n">08</span>Who It Suits</a>
+  <a href="#ch9"><span class="n">09</span>Risks & Unknowns</a>
+  <a href="#ch10"><span class="n">10</span>Glossary</a>
+  <a href="#ch11"><span class="n">11</span>Takeaways</a>
   <div class="mini"><span>Read</span><span id="tocPct">0%</span></div>
   <div class="mini-bar"><i id="tocBar"></i></div>
 </aside>
-<nav class="chapters" aria-label="Chapters"><div class="rail" id="rail"><a href="#ch1">01 · Peptide</a><a href="#ch2">02 · Origin</a><a href="#ch3">03 · Mechanism</a><a href="#ch4">04 · Evidence</a><a href="#ch5">05 · Reports</a><a href="#ch6">06 · Risks</a><a href="#ch7">07 · Glossary</a><a href="#ch8">08 · Takeaways</a></div></nav>
+<nav class="chapters" aria-label="Chapters"><div class="rail" id="rail"><a href="#ch1">01 · Peptide</a><a href="#ch2">02 · Origin</a><a href="#ch3">03 · Mechanism</a><a href="#ch4">04 · Evidence</a><a href="#ch5">05 · Reports</a><a href="#ch6">06 · Vs Others</a><a href="#ch7">07 · Benefits</a><a href="#ch8">08 · Who It Suits</a><a href="#ch9">09 · Risks</a><a href="#ch10">10 · Glossary</a><a href="#ch11">11 · Takeaways</a></div></nav>
 
 <header class="hero">
   <div class="badge"><span class="dot"></span>senolytic peptide · clears senescent cells in mice</div>
@@ -548,7 +626,7 @@ mini-poll { display: block; }
   <span class="eyebrow"><span class="n">01</span>The peptide</span>
   <h2>What <span class="hl">FOXO4-DRI</span> actually is</h2>
   <p class="lede">Not a natural peptide at all — a <strong>designed weapon</strong> against senescent cells, built backwards and upside-down on purpose.</p>
-  <div class="diagram reveal"><svg viewBox="0 0 640 220" role="img" aria-label="FOXO4-DRI as a mirror-image D-amino-acid chain"><text x="20" y="24" fill="#a9b1c9" font-size="13" font-weight="700" letter-spacing="2">FOXO4-DRI · MIRROR-IMAGE PEPTIDE</text><path d="M60 62 H580" stroke="#ed99fa" stroke-width="2" stroke-dasharray="6 6" class="flow"/><path d="M60 62 l14 -6 M60 62 l14 6" stroke="#ed99fa" stroke-width="2" fill="none"/><text x="320" y="52" fill="#e983f9" font-size="12" font-weight="800" text-anchor="middle">BUILT BACKWARDS — REVERSED ORDER</text><circle cx="40.0" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="40.0" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="69.5" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="69.5" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="98.9" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="98.9" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="128.4" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="128.4" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="157.9" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="157.9" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="187.4" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="187.4" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="216.8" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="216.8" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="246.3" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="246.3" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="275.8" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="275.8" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="305.3" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="305.3" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="334.7" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="334.7" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="364.2" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="364.2" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="393.7" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="393.7" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="423.2" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="423.2" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="452.6" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="452.6" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="482.1" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="482.1" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="511.6" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="511.6" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="541.1" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="541.1" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="570.5" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="570.5" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="600.0" cy="100" r="8" fill="#922c98" stroke="#e983f9" stroke-width="2"/><text x="600.0" y="130" fill="#a9b1c9" font-size="10" font-weight="800" text-anchor="middle">D</text><text x="320" y="170" fill="#e983f9" font-size="13" font-weight="800" text-anchor="middle">EVERY LINK IS A MIRROR-IMAGE (D) BUILDING BLOCK</text><text x="320" y="192" fill="#7f88a5" font-size="12" text-anchor="middle">enzymes can’t read it — so it survives instead of being digested</text></svg><div class="cap">Each bead is a D-amino acid — the mirror image of a normal building block — strung in reverse. Your digestive enzymes don’t recognize the pattern.</div></div><div class="grid3">
+  <div class="diagram reveal"><svg viewBox="0 0 640 220" role="img" aria-label="FOXO4-DRI as a mirror-image D-amino-acid chain"><text x="20" y="24" fill="#c5a9c9" font-size="13" font-weight="700" letter-spacing="2">FOXO4-DRI · MIRROR-IMAGE PEPTIDE</text><path d="M60 62 H580" stroke="#ed99fa" stroke-width="2" stroke-dasharray="6 6" class="flow"/><path d="M60 62 l14 -6 M60 62 l14 6" stroke="#ed99fa" stroke-width="2" fill="none"/><text x="320" y="52" fill="#838ef9" font-size="12" font-weight="800" text-anchor="middle">BUILT BACKWARDS — REVERSED ORDER</text><circle cx="40.0" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="40.0" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="69.5" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="69.5" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="98.9" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="98.9" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="128.4" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="128.4" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="157.9" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="157.9" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="187.4" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="187.4" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="216.8" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="216.8" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="246.3" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="246.3" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="275.8" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="275.8" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="305.3" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="305.3" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="334.7" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="334.7" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="364.2" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="364.2" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="393.7" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="393.7" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="423.2" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="423.2" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="452.6" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="452.6" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="482.1" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="482.1" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="511.6" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="511.6" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="541.1" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="541.1" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="570.5" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="570.5" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><circle cx="600.0" cy="100" r="8" fill="#6f982c" stroke="#838ef9" stroke-width="2"/><text x="600.0" y="130" fill="#c5a9c9" font-size="10" font-weight="800" text-anchor="middle">D</text><text x="320" y="170" fill="#838ef9" font-size="13" font-weight="800" text-anchor="middle">EVERY LINK IS A MIRROR-IMAGE (D) BUILDING BLOCK</text><text x="320" y="192" fill="#a07fa5" font-size="12" text-anchor="middle">enzymes can’t read it — so it survives instead of being digested</text></svg><div class="cap">Each bead is a D-amino acid — the mirror image of a normal building block — strung in reverse. Your digestive enzymes don’t recognize the pattern.</div></div><div class="grid3">
     <div class="card sky reveal"><h3>DRI = built to survive</h3><p><strong>D-retro-inverso</strong>: the chain uses mirror-image building blocks in reverse order. Your enzymes <strong>can’t recognize or digest it</strong> — so it lasts.</p></div>
     <div class="card teal reveal"><h3>A copy of FOXO4’s grip</h3><p>It mimics the part of the <strong>FOXO4 protein</strong> that holds onto p53 in senescent cells — a decoy that steals the handshake.</p></div>
     <div class="card org reveal"><h3>Senolytic, not supplement</h3><p>Senolytics <strong>kill specific cells</strong>. That’s drug territory with drug stakes — not a wellness tonic.</p></div>
@@ -566,24 +644,24 @@ mini-poll { display: block; }
   <p class="lede">A single study made this peptide <strong>the most famous mouse result</strong> in aging science — then nothing followed.</p>
   <div class="diagram reveal">
     <svg viewBox="0 0 640 220" role="img" aria-label="Timeline of FOXO4-DRI research">
-      <line x1="70" y1="120" x2="570" y2="120" stroke="#1a1821" stroke-width="3"/>
-<circle cx="70" cy="120" r="16" fill="none" stroke="#e983f9" stroke-width="2" class="ringp"/>
-        <circle cx="70" cy="120" r="8" fill="#e983f9"/>
-        <text x="70" y="88" fill="#e983f9" font-size="12" font-weight="800" text-anchor="middle">2000s</text>
-        <text x="70" y="162" fill="#a9b1c9" font-size="11" text-anchor="middle">Zombie cells indicted</text>
+      <line x1="70" y1="120" x2="570" y2="120" stroke="#1e2118" stroke-width="3"/>
+<circle cx="70" cy="120" r="16" fill="none" stroke="#838ef9" stroke-width="2" class="ringp"/>
+        <circle cx="70" cy="120" r="8" fill="#838ef9"/>
+        <text x="70" y="88" fill="#838ef9" font-size="12" font-weight="800" text-anchor="middle">2000s</text>
+        <text x="70" y="162" fill="#c5a9c9" font-size="11" text-anchor="middle">Zombie cells indicted</text>
 <circle cx="237" cy="120" r="16" fill="none" stroke="#ed99fa" stroke-width="2" class="ringp"/>
         <circle cx="237" cy="120" r="8" fill="#ed99fa"/>
         <text x="237" y="88" fill="#ed99fa" font-size="12" font-weight="800" text-anchor="middle">2015</text>
-        <text x="237" y="162" fill="#a9b1c9" font-size="11" text-anchor="middle">First senolytics</text>
-<circle cx="403" cy="120" r="16" fill="none" stroke="#922c98" stroke-width="2" class="ringp"/>
-        <circle cx="403" cy="120" r="8" fill="#922c98"/>
-        <text x="403" y="88" fill="#922c98" font-size="12" font-weight="800" text-anchor="middle">2017</text>
-        <text x="403" y="162" fill="#a9b1c9" font-size="11" text-anchor="middle">The Cell paper</text>
-<circle cx="570" cy="120" r="16" fill="none" stroke="#e983f9" stroke-width="2" class="ringp"/>
-        <circle cx="570" cy="120" r="8" fill="#e983f9"/>
-        <text x="570" y="88" fill="#e983f9" font-size="12" font-weight="800" text-anchor="middle">2018–now</text>
-        <text x="570" y="162" fill="#a9b1c9" font-size="11" text-anchor="middle">The long wait</text>
-      <text x="320" y="208" fill="#7f88a5" font-size="12" text-anchor="middle">One paper, furry rejuvenated mice, endless headlines — and no human follow-up.</text>
+        <text x="237" y="162" fill="#c5a9c9" font-size="11" text-anchor="middle">First senolytics</text>
+<circle cx="403" cy="120" r="16" fill="none" stroke="#6f982c" stroke-width="2" class="ringp"/>
+        <circle cx="403" cy="120" r="8" fill="#6f982c"/>
+        <text x="403" y="88" fill="#6f982c" font-size="12" font-weight="800" text-anchor="middle">2017</text>
+        <text x="403" y="162" fill="#c5a9c9" font-size="11" text-anchor="middle">The Cell paper</text>
+<circle cx="570" cy="120" r="16" fill="none" stroke="#838ef9" stroke-width="2" class="ringp"/>
+        <circle cx="570" cy="120" r="8" fill="#838ef9"/>
+        <text x="570" y="88" fill="#838ef9" font-size="12" font-weight="800" text-anchor="middle">2018–now</text>
+        <text x="570" y="162" fill="#c5a9c9" font-size="11" text-anchor="middle">The long wait</text>
+      <text x="320" y="208" fill="#a07fa5" font-size="12" text-anchor="middle">One paper, furry rejuvenated mice, endless headlines — and no human follow-up.</text>
     </svg>
     <div class="cap">One paper, furry rejuvenated mice, endless headlines — and no human follow-up.</div>
   </div>  <div class="kv reveal"><span class="k s">Why FOXO4?</span><p>Senescent cells use the <strong>FOXO4–p53 handshake</strong> to dodge self-destruction. Break the handshake, the dodge fails.</p></div>
@@ -603,38 +681,174 @@ mini-poll { display: block; }
   <div class="diagram reveal">
     <svg viewBox="0 0 640 240" role="img" aria-label="Proposed four-step mechanism of FOXO4-DRI">
       <g font-size="13" font-weight="800" text-anchor="middle">
-        <rect x="20" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#e983f9" stroke-width="2"/>
-        <circle cx="84" cy="86" r="18" fill="none" stroke="#e983f9" stroke-width="2" class="ringp"/>
-        <text x="84" y="118" fill="#e983f9">1 · FIND</text>
-        <text x="84" y="144" fill="#a9b1c9" font-size="11" font-weight="600">Seeks zombie</text>
-        <text x="84" y="160" fill="#a9b1c9" font-size="11" font-weight="600">cells</text>
+        <rect x="20" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#838ef9" stroke-width="2"/>
+        <circle cx="84" cy="86" r="18" fill="none" stroke="#838ef9" stroke-width="2" class="ringp"/>
+        <text x="84" y="118" fill="#838ef9">1 · FIND</text>
+        <text x="84" y="144" fill="#c5a9c9" font-size="11" font-weight="600">Seeks zombie</text>
+        <text x="84" y="160" fill="#c5a9c9" font-size="11" font-weight="600">cells</text>
         <rect x="172" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#ed99fa" stroke-width="2"/>
         <circle cx="236" cy="86" r="18" fill="none" stroke="#ed99fa" stroke-width="2" class="ringp"/>
         <text x="236" y="118" fill="#ed99fa">2 · DECOY</text>
-        <text x="236" y="144" fill="#a9b1c9" font-size="11" font-weight="600">Steals the</text>
-        <text x="236" y="160" fill="#a9b1c9" font-size="11" font-weight="600">handshake</text>
-        <rect x="324" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#922c98" stroke-width="2"/>
-        <circle cx="388" cy="86" r="18" fill="none" stroke="#922c98" stroke-width="2" class="ringp"/>
-        <text x="388" y="118" fill="#922c98">3 · RELEASE</text>
-        <text x="388" y="144" fill="#a9b1c9" font-size="11" font-weight="600">The dodge</text>
-        <text x="388" y="160" fill="#a9b1c9" font-size="11" font-weight="600">fails</text>
-        <rect x="476" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#e983f9" stroke-width="2"/>
-        <circle cx="540" cy="86" r="18" fill="none" stroke="#e983f9" stroke-width="2" class="ringp"/>
-        <text x="540" y="118" fill="#e983f9">4 · CLEAR</text>
-        <text x="540" y="144" fill="#a9b1c9" font-size="11" font-weight="600">Tissue</text>
-        <text x="540" y="160" fill="#a9b1c9" font-size="11" font-weight="600">rejuvenates</text>
+        <text x="236" y="144" fill="#c5a9c9" font-size="11" font-weight="600">Steals the</text>
+        <text x="236" y="160" fill="#c5a9c9" font-size="11" font-weight="600">handshake</text>
+        <rect x="324" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#6f982c" stroke-width="2"/>
+        <circle cx="388" cy="86" r="18" fill="none" stroke="#6f982c" stroke-width="2" class="ringp"/>
+        <text x="388" y="118" fill="#6f982c">3 · RELEASE</text>
+        <text x="388" y="144" fill="#c5a9c9" font-size="11" font-weight="600">The dodge</text>
+        <text x="388" y="160" fill="#c5a9c9" font-size="11" font-weight="600">fails</text>
+        <rect x="476" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#838ef9" stroke-width="2"/>
+        <circle cx="540" cy="86" r="18" fill="none" stroke="#838ef9" stroke-width="2" class="ringp"/>
+        <text x="540" y="118" fill="#838ef9">4 · CLEAR</text>
+        <text x="540" y="144" fill="#c5a9c9" font-size="11" font-weight="600">Tissue</text>
+        <text x="540" y="160" fill="#c5a9c9" font-size="11" font-weight="600">rejuvenates</text>
       </g>
-      <g stroke="#7f88a5" stroke-width="2" fill="none">
+      <g stroke="#a07fa5" stroke-width="2" fill="none">
         <path d="M148 120 h24" class="flowseq1"/>
 <path d="M300 120 h24" class="flowseq2"/>
 <path d="M452 120 h24" class="flowseq3"/>
       </g>
-      <text x="320" y="220" fill="#7f88a5" font-size="12" text-anchor="middle">The proposed chain — find, decoy, release, clear. A molecular con trick, demonstrated in mice, never in people.</text>
+      <text x="320" y="220" fill="#a07fa5" font-size="12" text-anchor="middle">The proposed chain — find, decoy, release, clear. A molecular con trick, demonstrated in mice, never in people.</text>
     </svg>
     <div class="cap">The proposed chain — find, decoy, release, clear. A molecular con trick, demonstrated in mice, never in people.</div>
   </div>  <div class="kv reveal"><span class="k s">The survival handshake</span><p>Senescent cells keep <strong>FOXO4 glued to p53</strong>, which blocks p53’s kill order. The peptide is a decoy FOXO4 — p53 grabs it instead.</p></div>
   <div class="kv reveal"><span class="k t">p53 does its real job</span><p>Freed p53 <strong>orders the damaged cell to self-destruct</strong> — the guardian protein, back on duty.</p></div>
   <div class="kv reveal"><span class="k o">Clearance, then calm</span><p>With zombies cleared, <strong>inflammatory signaling drops</strong> and tissues function better — in mice.</p></div><div class="plain reveal"><div class="plabel">Plain English</div><p>The chain: <strong>find → decoy → release → clear</strong>. Elegant, specific — and con tricks need perfect targeting.</p></div>
+  <h3 class="sech">Why senescent cells matter<span class="sub">Three cell states — only one of them is the target</span></h3>
+  <div class="diagram reveal">
+    <svg viewBox="0 0 1280 320" role="img" aria-label="Normal, senescent and apoptotic cells compared">
+      <g text-anchor="middle">
+        <rect x="15" y="50" width="410" height="270" rx="16" fill="#000000" stroke="#34d399" stroke-width="2"/>
+        <text x="220" y="82" fill="#34d399" font-size="14" font-weight="800" class="sq6a">1 · NORMAL CELL</text>
+        <circle cx="220" cy="185" r="72" fill="none" stroke="#34d399" stroke-width="2.5"/>
+        <circle cx="220" cy="185" r="26" fill="#34d39933" stroke="#34d399" stroke-width="2"/>
+        <path d="M128 185a92 92 0 0 1 40-72" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="6 6" class="flowseq"/>
+        <path d="M168 104l12 14 2-18z" fill="#34d399"/>
+        <text x="220" y="305" fill="#c5a9c9" font-size="11" font-weight="600">divides when needed · healthy turnover</text>
+        <rect x="435" y="50" width="410" height="270" rx="16" fill="#000000" stroke="#26f9df" stroke-width="2"/>
+        <text x="640" y="82" fill="#26f9df" font-size="14" font-weight="800" class="sq6b">2 · SENESCENT CELL</text>
+        <text x="640" y="104" fill="#26f9df" font-size="11" font-weight="700">METABOLICALLY ACTIVE · CELL CYCLE ARRESTED</text>
+        <ellipse cx="640" cy="190" rx="112" ry="70" fill="none" stroke="#26f9df" stroke-width="2.5"/>
+        <circle cx="640" cy="190" r="32" fill="none" stroke="#26f9df" stroke-width="2" class="ringp"/>
+        <circle cx="640" cy="190" r="30" fill="#fbbf2422" stroke="#26f9df" stroke-width="2"/>
+        <path d="M628 190h24M640 178v24M631 181l18 18M649 181l-18 18" stroke="#3dfae2" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="752" cy="190" r="5" fill="#3dfae2"><animateMotion dur="3.2s" repeatCount="indefinite" path="M0 0 q60 -40 110 -20"/></circle>
+        <circle cx="752" cy="208" r="5" fill="#3dfae2"><animateMotion dur="4s" repeatCount="indefinite" path="M0 0 q70 10 120 40"/></circle>
+        <circle cx="528" cy="190" r="5" fill="#3dfae2"><animateMotion dur="3.6s" repeatCount="indefinite" path="M0 0 q-60 -50 -110 -30"/></circle>
+        <circle cx="528" cy="206" r="5" fill="#3dfae2"><animateMotion dur="4.4s" repeatCount="indefinite" path="M0 0 q-55 40 -105 60"/></circle>
+        <text x="640" y="140" fill="#3dfae2" font-size="11" font-weight="700">SASP: inflammatory signals drifting out</text>
+        <text x="640" y="305" fill="#c5a9c9" font-size="11" font-weight="600">alive · arrested · loud</text>
+        <rect x="855" y="50" width="410" height="270" rx="16" fill="#000000" stroke="#717df8" stroke-width="2"/>
+        <text x="1060" y="82" fill="#717df8" font-size="14" font-weight="800" class="sq6c">3 · APOPTOTIC CELL</text>
+        <circle cx="1060" cy="185" r="48" fill="none" stroke="#717df8" stroke-width="2.5"/>
+        <circle cx="1060" cy="185" r="44" fill="#f8717114"/>
+        <circle cx="1112" cy="160" r="9" fill="#f8717122" stroke="#717df8" stroke-width="1.5"/>
+        <circle cx="1122" cy="205" r="7" fill="#f8717122" stroke="#717df8" stroke-width="1.5"/>
+        <circle cx="1008" cy="155" r="8" fill="#f8717122" stroke="#717df8" stroke-width="1.5"/>
+        <circle cx="1126" cy="238" r="6" fill="#717df8" opacity=".7"><animateMotion dur="3.4s" repeatCount="indefinite" path="M0 0 q30 25 55 15"/></circle>
+        <text x="1060" y="305" fill="#c5a9c9" font-size="11" font-weight="600">orderly exit · dismantled and cleared</text>
+      </g>
+    </svg>
+    <div class="cap">A senescent cell is not dead — it is metabolically active, permanently arrested, and secreting signals (SASP) that alter its neighborhood.</div>
+  </div>
+  <div class="grid3">
+    <div class="card sky reveal"><h3>Normal cells</h3><p>Divide when needed, die when told. <strong>Healthy turnover</strong> keeps tissues fresh.</p></div>
+    <div class="card teal reveal"><h3>Senescent cells</h3><p>Alive, arrested, and <strong>loud</strong> — they secrete SASP: inflammatory and tissue-altering factors that bother their neighbors.</p></div>
+    <div class="card org reveal"><h3>Apoptotic cells</h3><p>The orderly exit — <strong>dismantled and cleared</strong> without drama. This is the ending FOXO4-DRI tries to restore.</p></div>
+  </div>
+  <div class="kv reveal"><span class="k t">Not all senescent cells are villains</span><p>Senescence has <strong>physiological roles</strong> — it helps wound healing, guides development, and stops damaged cells from turning cancerous. Indiscriminately eliminating every senescent cell would be an oversimplification.</p></div>
+  <h3 class="sech">Inside the senescent cell — the competition, step by step<span class="sub">Six events in order. Nucleus = inner circle · cytoplasm = the space around it · the peptide's target is inside the cell, never a surface receptor</span></h3>
+  <div class="diagram reveal">
+    <svg viewBox="0 0 1280 400" role="img" aria-label="FOXO4-DRI competing with FOXO4 for p53, six sequential steps">
+      <g text-anchor="middle">
+        <rect x="8" y="60" width="200" height="300" rx="14" fill="#000000" stroke="#3dfae2" stroke-width="2"/>
+        <text x="108" y="95" fill="#3dfae2" font-size="12" font-weight="800" class="sq6a">1 · STRESS</text>
+        <circle cx="108" cy="215" r="58" fill="none" stroke="#3dfae2" stroke-width="2.5"/>
+        <path d="M96 215h24M108 203v24M99 206l18 18M117 206l-18 18" stroke="#3dfae2" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="108" cy="215" r="15" fill="#26f9df" opacity=".9"/>
+        <text x="108" y="219" fill="#000000" font-size="9" font-weight="800">p53</text>
+        <text x="108" y="350" fill="#c5a9c9" font-size="11" font-weight="600">DNA damage → p53 stabilizes</text>
+        <rect x="216" y="60" width="200" height="300" rx="14" fill="#000000" stroke="#838ef9" stroke-width="2"/>
+        <text x="316" y="95" fill="#838ef9" font-size="12" font-weight="800" class="sq6b">2 · THE GRIP</text>
+        <circle cx="316" cy="215" r="58" fill="none" stroke="#838ef9" stroke-width="2.5"/>
+        <rect x="284" y="202" width="36" height="26" rx="8" fill="#838ef9"/>
+        <text x="302" y="220" fill="#000000" font-size="9" font-weight="800">FOXO4</text>
+        <circle cx="348" cy="215" r="16" fill="#26f9df"/>
+        <text x="348" y="219" fill="#000000" font-size="9" font-weight="800">p53</text>
+        <path d="M320 215h12" stroke="#ffffff" stroke-width="2.5"/>
+        <text x="316" y="350" fill="#c5a9c9" font-size="11" font-weight="600">FOXO4 + p53 locked · kill order blocked</text>
+        <rect x="424" y="60" width="200" height="300" rx="14" fill="#000000" stroke="#7dd3fc" stroke-width="2"/>
+        <text x="524" y="95" fill="#7dd3fc" font-size="12" font-weight="800" class="sq6c">3 · ENTRY</text>
+        <line x1="560" y1="115" x2="560" y2="330" stroke="#7dd3fc" stroke-width="2" stroke-dasharray="4 5"/>
+        <text x="560" y="108" fill="#7dd3fc" font-size="10" font-weight="700">CELL MEMBRANE</text>
+        <text x="470" y="150" fill="#a07fa5" font-size="10" font-weight="700">OUTSIDE</text>
+        <text x="592" y="150" fill="#a07fa5" font-size="10" font-weight="700">INSIDE</text>
+        <circle cx="0" cy="0" r="7" fill="#7dd3fc"><animateMotion dur="2.6s" repeatCount="indefinite" path="M470 215 h 120"/></circle>
+        <circle cx="0" cy="0" r="7" fill="#7dd3fc"><animateMotion dur="2.6s" begin="1s" repeatCount="indefinite" path="M470 250 h 120"/></circle>
+        <text x="524" y="310" fill="#7dd3fc" font-size="11" font-weight="700">✗ no surface receptor</text>
+        <text x="524" y="350" fill="#c5a9c9" font-size="11" font-weight="600">crosses via penetrating component</text>
+        <rect x="632" y="60" width="200" height="300" rx="14" fill="#000000" stroke="#7dd3fc" stroke-width="2"/>
+        <text x="732" y="95" fill="#7dd3fc" font-size="12" font-weight="800" class="sq6d">4 · CONTEST</text>
+        <circle cx="732" cy="225" r="58" fill="none" stroke="#7dd3fc" stroke-width="2.5"/>
+        <circle cx="732" cy="225" r="20" fill="#26f9df"/>
+        <text x="732" y="229" fill="#000000" font-size="10" font-weight="800">p53</text>
+        <rect x="706" y="150" width="52" height="20" rx="6" fill="#fbbf2433" stroke="#26f9df" stroke-width="1.5"/>
+        <text x="732" y="164" fill="#26f9df" font-size="10" font-weight="800">TAD2</text>
+        <circle cx="748" cy="225" r="10" fill="#7dd3fc" stroke="#ffffff" stroke-width="1.5"/>
+        <rect x="668" y="285" width="52" height="24" rx="8" fill="none" stroke="#a07fa5" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <text x="694" y="301" fill="#a07fa5" font-size="9" font-weight="800">FOXO4</text>
+        <text x="732" y="350" fill="#c5a9c9" font-size="11" font-weight="600">decoy wins the TAD2 spot</text>
+        <rect x="840" y="60" width="200" height="300" rx="14" fill="#000000" stroke="#26f9df" stroke-width="2"/>
+        <text x="940" y="95" fill="#26f9df" font-size="12" font-weight="800" class="sq6e">5 · EXCLUSION</text>
+        <circle cx="940" cy="215" r="58" fill="none" stroke="#26f9df" stroke-width="2.5"/>
+        <text x="940" y="145" fill="#a07fa5" font-size="10" font-weight="700">NUCLEUS</text>
+        <circle cx="0" cy="0" r="14" fill="#26f9df"><animateMotion dur="3s" repeatCount="indefinite" path="M940 215 q45 0 75 25"/></circle>
+        <text x="940" y="305" fill="#26f9df" font-size="11" font-weight="700">nuclear exclusion of active p53</text>
+        <text x="940" y="350" fill="#c5a9c9" font-size="11" font-weight="600">p53 back on duty</text>
+        <rect x="1048" y="60" width="200" height="300" rx="14" fill="#000000" stroke="#717df8" stroke-width="2"/>
+        <text x="1148" y="95" fill="#717df8" font-size="12" font-weight="800" class="sq6f">6 · KILL ORDER</text>
+        <ellipse cx="1148" cy="160" rx="36" ry="21" fill="#f8717114" stroke="#717df8" stroke-width="2.5" class="ringp"/>
+        <text x="1148" y="164" fill="#717df8" font-size="10" font-weight="800">MITO</text>
+        <text x="1148" y="225" fill="#717df8" font-size="11" font-weight="800">CASPASES ON</text>
+        <circle cx="1148" cy="275" r="30" fill="none" stroke="#717df8" stroke-width="2.5"/>
+        <circle cx="1180" cy="260" r="7" fill="#f8717122" stroke="#717df8" stroke-width="1.5"/>
+        <circle cx="1118" cy="252" r="6" fill="#f8717122" stroke="#717df8" stroke-width="1.5"/>
+        <text x="1148" y="350" fill="#c5a9c9" font-size="11" font-weight="600">mito → caspases → apoptosis</text>
+      </g>
+    </svg>
+    <div class="cap">Six events in order — never skipping from “binds p53” to “pain of aging disappears.” Each step happens in its own compartment; nothing is shown destroying a nucleus or dissolving a cell instantly.</div>
+  </div>
+  <h3 class="sech">Aging cell: before vs after<span class="sub">The after-state is a biological consequence of a selective exit — not a magical rejuvenation</span></h3>
+  <div class="diagram reveal">
+    <svg viewBox="0 0 1280 300" role="img" aria-label="Before and after senescent cell apoptosis">
+      <g text-anchor="middle">
+        <rect x="15" y="50" width="580" height="250" rx="16" fill="#000000" stroke="#26f9df" stroke-width="2"/>
+        <text x="305" y="85" fill="#26f9df" font-size="14" font-weight="800">BEFORE</text>
+        <circle cx="150" cy="130" r="38" fill="none" stroke="#a07fa5" stroke-width="2"/>
+        <path d="M132 130q9 -8 18 0t18 0t18 0" fill="none" stroke="#a07fa5" stroke-width="2"/>
+        <circle cx="470" cy="240" r="38" fill="none" stroke="#a07fa5" stroke-width="2"/>
+        <path d="M452 240q9 -8 18 0t18 0t18 0" fill="none" stroke="#a07fa5" stroke-width="2"/>
+        <ellipse cx="305" cy="180" rx="95" ry="60" fill="none" stroke="#26f9df" stroke-width="2.5"/>
+        <circle cx="305" cy="180" r="28" fill="#fbbf2422" stroke="#26f9df" stroke-width="2"/>
+        <circle cx="212" cy="150" r="4.5" fill="#3dfae2" opacity=".85"><animateMotion dur="3s" repeatCount="indefinite" path="M0 0 q-20 -18 -38 -10"/></circle>
+        <circle cx="398" cy="150" r="4.5" fill="#3dfae2" opacity=".85"><animateMotion dur="3.8s" repeatCount="indefinite" path="M0 0 q20 -18 38 -8"/></circle>
+        <circle cx="305" cy="112" r="4.5" fill="#3dfae2" opacity=".85"><animateMotion dur="3.4s" repeatCount="indefinite" path="M0 0 q-8 -24 -4 -40"/></circle>
+        <text x="305" y="285" fill="#c5a9c9" font-size="11" font-weight="600">senescent cell bathes its neighbors in SASP</text>
+        <path d="M615 175h60" stroke="#a07fa5" stroke-width="2.5" class="flowseq2"/>
+        <path d="M668 168l14 7-14 7z" fill="#a07fa5"/>
+        <text x="645" y="160" fill="#a07fa5" font-size="11" font-weight="700">apoptosis</text>
+        <rect x="695" y="50" width="570" height="250" rx="16" fill="#000000" stroke="#34d399" stroke-width="2"/>
+        <text x="980" y="85" fill="#34d399" font-size="14" font-weight="800">AFTER</text>
+        <circle cx="835" cy="130" r="38" fill="none" stroke="#34d399" stroke-width="2" opacity=".8"/>
+        <circle cx="1140" cy="240" r="38" fill="none" stroke="#34d399" stroke-width="2" opacity=".8"/>
+        <circle cx="980" cy="180" r="36" fill="none" stroke="#717df8" stroke-width="2.5"/>
+        <circle cx="1018" cy="162" r="7" fill="#f8717122" stroke="#717df8" stroke-width="1.5"/>
+        <circle cx="944" cy="158" r="6" fill="#f8717122" stroke="#717df8" stroke-width="1.5"/>
+        <circle cx="948" cy="120" r="4.5" fill="#3dfae2" opacity=".18"/><circle cx="1012" cy="122" r="4.5" fill="#3dfae2" opacity=".18"/>
+        <text x="980" y="285" fill="#c5a9c9" font-size="11" font-weight="600">the cell exits quietly · SASP fades · neighbors recover</text>
+      </g>
+    </svg>
+    <div class="cap">No rejuvenated super-cell. The “after” is tissue recovery after a selective cellular exit — the outcome reported in mice.</div>
+  </div>
 </section>
 <mini-poll slug="foxo4-dri-mini-ch3"
   data-question="Most striking part of the mouse result?"
@@ -646,14 +860,34 @@ mini-poll { display: block; }
   <span class="eyebrow"><span class="n">04</span>Evidence check</span>
   <h2>What the science <span class="hl">actually</span> supports</h2>
   <p class="lede">A landmark mouse study — and <strong>nearly a decade of quiet</strong> since.</p>
-    <div class="ebar"><div class="row"><span class="t">Aged mice (2017)</span><span class="v">striking rejuvenation</span></div><div class="track"><div class="fill" style="--w:75%;background:linear-gradient(90deg,#ed99fa,#f3b9fb)"></div></div><div class="note">Fitness, fur, and kidney function improved; senescent cells cleared selectively. A genuinely impressive mouse result.</div></div>
-  <div class="ebar"><div class="row"><span class="t">Chemotherapy-aged mice</span><span class="v">also benefited</span></div><div class="track"><div class="fill" style="--w:60%;background:linear-gradient(90deg,#e983f9,#ed99fa)"></div></div><div class="note">Mice aged by chemo drugs also improved — suggesting the effect isn’t limited to natural aging.</div></div>
-  <div class="ebar"><div class="row"><span class="t">Selectivity</span><span class="v">good in mice</span></div><div class="track"><div class="fill" style="--w:55%;background:linear-gradient(90deg,#e983f9,#922c98)"></div></div><div class="note">Healthy cells largely spared in the studies — the make-or-break property for any cell-killer.</div></div>
-  <div class="ebar"><div class="row"><span class="t">Human data</span><span class="v">none</span></div><div class="track"><div class="fill" style="--w:2%;background:linear-gradient(90deg,#1a1821,#1a1821)"></div></div><div class="note">No human trials. A decade-defining mouse result with no human chapter.</div></div><div class="grid3">
+    <div class="ebar reveal"><div class="row"><span class="t">Aged mice (2017)</span><span class="v">striking rejuvenation</span></div><div class="track"><div class="fill" style="--w:75%;background:linear-gradient(90deg,#ed99fa,#f2b9fb)"></div></div><div class="note">Fitness, fur, and kidney function improved; senescent cells cleared selectively. A genuinely impressive mouse result.</div></div>
+  <div class="ebar reveal"><div class="row"><span class="t">Chemotherapy-aged mice</span><span class="v">also benefited</span></div><div class="track"><div class="fill" style="--w:60%;background:linear-gradient(90deg,#838ef9,#ed99fa)"></div></div><div class="note">Mice aged by chemo drugs also improved — suggesting the effect isn’t limited to natural aging.</div></div>
+  <div class="ebar reveal"><div class="row"><span class="t">Selectivity</span><span class="v">good in mice</span></div><div class="track"><div class="fill" style="--w:55%;background:linear-gradient(90deg,#838ef9,#6f982c)"></div></div><div class="note">Healthy cells largely spared in the studies — the make-or-break property for any cell-killer.</div></div>
+  <div class="ebar reveal"><div class="row"><span class="t">Human data</span><span class="v">none</span></div><div class="track"><div class="fill" style="--w:2%;background:linear-gradient(90deg,#1e2118,#1e2118)"></div></div><div class="note">No human trials. A decade-defining mouse result with no human chapter.</div></div><div class="grid3">
     <div class="card sky reveal"><h3>The most famous thin file</h3><p>FOXO4-DRI is <strong>the most famous result with the thinnest follow-up</strong> on this site. Spectacular mice, silent humans.</p></div>
     <div class="card teal reveal"><h3>Selectivity is the bet</h3><p>Everything hinges on <strong>killing only zombie cells</strong>. In mice it held; human biology is where beautiful selectivities go to be tested.</p></div>
     <div class="card org reveal"><h3>The translation canyon</h3><p>Aging in a lab mouse and aging in a person differ enormously. <strong>Most celebrated mouse results never cross.</strong></p></div>
   </div><div class="plain reveal"><div class="plabel">Plain English</div><p>One spectacular paper. <strong>Then silence.</strong> Judge the peptide by the file, not the headlines.</p></div>
+  <h3 class="sech">The evidence ladder<span class="sub">Five rungs — notice where the ladder ends</span></h3>
+  <div class="ebar reveal"><div class="row"><span class="t">Molecular binding studies</span><span class="v">strong</span></div><div class="track"><div class="fill" style="--w:70%;background:linear-gradient(90deg,#838ef9,#ed99fa)"></div></div><div class="note">FOXO4-DRI binding to the p53 transactivation domain (TAD2) directly characterized in structural work.</div></div>
+  <div class="ebar reveal"><div class="row"><span class="t">Cell experiments</span><span class="v">selective killing in dishes</span></div><div class="track"><div class="fill" style="--w:60%;background:linear-gradient(90deg,#838ef9,#6f982c)"></div></div><div class="note">Senescent cells driven to caspase-dependent apoptosis; healthy cells largely spared.</div></div>
+  <div class="ebar reveal"><div class="row"><span class="t">Mouse models</span><span class="v">the famous 2017 result</span></div><div class="track"><div class="fill" style="--w:55%;background:linear-gradient(90deg,#ed99fa,#f2b9fb)"></div></div><div class="note">Aged and chemo-aged mice improved — fitness, fur, kidney function. Genuinely impressive, genuinely mice.</div></div>
+  <div class="ebar reveal"><div class="row"><span class="t">Human observational evidence</span><span class="v">none</span></div><div class="track"><div class="fill" style="--w:3%;background:linear-gradient(90deg,#1e2118,#1e2118)"></div></div><div class="note">No observational or compassionate-use data of note.</div></div>
+  <div class="ebar reveal"><div class="row"><span class="t">Human clinical trials</span><span class="v">none — the rung is empty</span></div><div class="track"><div class="fill" style="--w:2%;background:linear-gradient(90deg,#1e2118,#1e2118)"></div></div><div class="note">No phase 1, no safety data in people. The lack of human validation is the single most important fact on this ladder.</div></div>
+  <h3 class="sech">What it does vs what it doesn't do</h3>
+  <div class="duo">
+    <div class="do reveal"><h3>✓ What it does</h3><ul>
+      <li>Competes with FOXO4 for p53 binding <strong>in cell experiments</strong>.</li>
+      <li>Triggers apoptosis in <strong>senescent cells in dishes and mice</strong>.</li>
+      <li>Demonstrates that a <strong>protein–protein interaction</strong> can be a senolytic target.</li>
+    </ul></div>
+    <div class="dont reveal"><h3>✗ What it doesn't do</h3><ul>
+      <li><strong>Reverse human aging</strong> — senolytic activity in mice ≠ younger people.</li>
+      <li><strong>Regenerate organs</strong> or remove all age-related damage.</li>
+      <li><strong>Extend human lifespan</strong> — no human data exists at all.</li>
+      <li>Make senescent cells <strong>“healthy again”</strong> — it kills them, it doesn't fix them.</li>
+    </ul></div>
+  </div>
 </section>
 <mini-poll slug="foxo4-dri-mini-ch4"
   data-question="Famous 2017 result, still no human trials — your read?"
@@ -662,9 +896,9 @@ mini-poll { display: block; }
 
 <!-- ============ CHAPTER 5 ============ -->
 <section class="chapter" id="ch5">
-  <span class="eyebrow"><span class="n">05</span>What people say</span>
-  <h2>Reports from the <span class="hl">wild</span></h2>
-  <p class="lede">No gray-market scene, no trials — FOXO4-DRI lives in <strong>longevity-forum daydreams</strong>.</p>
+  <span class="eyebrow"><span class="n">05</span>Community reports</span>
+  <h2>Community <span class="hl">reports</span></h2>
+  <p class="lede">Across <strong>Reddit, forums, TikTok, and YouTube Shorts</strong>, the chatter is all about the famous mice — and a conspicuous absence of human stories. Paraphrased recurring themes below, all unverified.</p>
   <div class="ulegend reveal"><span class="udot" role="img" aria-label="Unverified anecdote"></span><p><strong>Unverified anecdote</strong> — the pulsing dot marks a paraphrased recurring theme from forums and social media: not verified, not evidence.</p></div><div class="anec-grid">
     <div class="anec reveal"><div class="anec-head"><h4>The fur photo</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div><p>“Those before-and-after mouse photos sold me.”</p><div class="caveat"><strong>Caveat:</strong> you are not a mouse, and fur is not a biomarker<br><strong>Pattern:</strong> photo-driven belief — the most shareable, least transferable evidence</div></div>
     <div class="anec reveal"><div class="anec-head"><h4>“When human trials?”</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div><p>“It’s been years — why no trials?”</p><div class="caveat"><strong>Caveat:</strong> the gap between mouse and human is where <strong>most drugs die</strong><br><strong>Pattern:</strong> impatience mistaken for a conspiracy</div></div>
@@ -676,13 +910,119 @@ mini-poll { display: block; }
   </div><div class="plain reveal"><div class="plabel">Plain English</div><p>The honest forum sentiment: <strong>awe at the mice, silence on the humans</strong>. That’s exactly the right shape of belief.</p></div>
 </section>
 <mini-poll slug="foxo4-dri-mini-ch5"
-  data-question="How do you feel about “someone must be making it DIY” chatter?"
-  data-answers='[["😨", "Terrifying — it’s a cell killer"], ["⚠️", "Risky like all gray-market stuff"], ["🤷", "People will do what they do"], ["🚫", "Shouldn’t happen"]]'>
+  data-question="Which community-report pattern stands out to you?"
+  data-answers='[["🐭", "Fur-photo belief — sold by the mouse pics"], ["⏳", "“When human trials?” impatience"], ["🧪", "The DIY whisper — terrifying"], ["🛡️", "p53 caution — the literate worry"]]'>
 </mini-poll>
 
 <!-- ============ CHAPTER 6 ============ -->
 <section class="chapter" id="ch6">
-  <span class="eyebrow"><span class="n">06</span>Risks & unknowns</span>
+  <span class="eyebrow"><span class="n">06</span>Head to head</span>
+  <h2>FOXO4-DRI vs other <span class="hl">senolytics</span></h2>
+  <p class="lede">Four different weapons against senescent cells. Compare the <strong>mechanisms</strong> — not a leaderboard.</p>
+  <div class="grid2">
+    <div class="card sky reveal"><h3>FOXO4-DRI · the handshake breaker</h3><p><strong>Mechanism:</strong> disrupts the <strong>FOXO4–p53 protein–protein interaction</strong> — a D-retro-inverso, cell-penetrating peptide that competes for p53's TAD2.<br><strong>Evidence:</strong> preclinical only — cells and mice.<br><strong>Status:</strong> research-stage, no human trials.</p></div>
+    <div class="card teal reveal"><h3>Dasatinib + quercetin · the combo</h3><p><strong>Mechanism:</strong> kinase inhibition (dasatinib) plus flavonoid (quercetin) — drives senescent cells toward apoptosis through <strong>entirely different pathways</strong>.<br><strong>Evidence:</strong> the most clinically tested senolytic set — small human pilot data exists.<br><strong>Status:</strong> repurposed drugs, real side-effect profiles.</p></div>
+  </div><div class="grid2">
+    <div class="card org reveal"><h3>Navitoclax (ABT-263) · the cancer drug</h3><p><strong>Mechanism:</strong> <strong>BCL-2/BCL-xL inhibition</strong> — pushes apoptosis-prone cells over the edge.<br><strong>Evidence:</strong> oncology and senolytic research; platelet toxicity is a documented issue.<br><strong>Status:</strong> a real drug with real risks — not a wellness product.</p></div>
+    <div class="card sky reveal"><h3>Fisetin · the flavonoid</h3><p><strong>Mechanism:</strong> natural flavonoid with <strong>broad senolytic activity</strong> in preclinical work — mechanism less precisely pinned down.<br><strong>Evidence:</strong> early human research ongoing; preclinical base is real but broad.<br><strong>Status:</strong> supplement-adjacent, evidence thin.</p></div>
+  </div>
+  <div class="kv reveal"><span class="k o">No leaderboard</span><p>Different mechanisms, different evidence bases. A result for <strong>dasatinib + quercetin cannot be pasted onto FOXO4-DRI</strong>, and mouse data for one is not human data for any.</p></div>
+  <h3 class="sech">Why FOXO4-DRI is interesting — but still experimental<span class="sub">The six questions that would have to be answered before any human use</span></h3>
+  <div class="grid3">
+    <div class="card teal reveal"><h3>Delivery</h3><p>How does a cell-penetrating peptide <strong>reach the right tissues</strong> in a living person?</p></div>
+    <div class="card sky reveal"><h3>Pharmacokinetics</h3><p>How long does it last, where does it go, how is it cleared? <strong>Unresolved.</strong></p></div>
+    <div class="card org reveal"><h3>Tissue selectivity</h3><p>Senescent cells live in many tissues — can it <strong>hit only the intended ones</strong> in people?</p></div>
+  </div><div class="grid3">
+    <div class="card sky reveal"><h3>Long-term safety</h3><p>What does <strong>repeated cell-clearing</strong> do over years? Nobody knows.</p></div>
+    <div class="card teal reveal"><h3>Off-target effects</h3><p>Does it touch <strong>other protein interactions</strong> besides FOXO4–p53?</p></div>
+    <div class="card org reveal"><h3>p53's day job</h3><p>p53 is the <strong>tumor suppressor</strong> — can its normal cancer-guardian function be fully preserved?</p></div>
+  </div>
+</section>
+<mini-poll slug="foxo4-dri-mini-ch6"
+  data-question="Which senolytic strategy intrigues you most?"
+  data-answers='[["🤝", "FOXO4-DRI — the handshake breaker"], ["💊", "Dasatinib + quercetin — the tested combo"], ["🎯", "Navitoclax — the precision cancer drug"], ["🌿", "Fisetin — the natural flavonoid"]]'>
+</mini-poll>
+
+<!-- ============ CHAPTER 7 ============ -->
+<section class="chapter" id="ch7">
+  <span class="eyebrow"><span class="n">07</span>Potential benefits</span>
+  <h2>Potential <span class="hl">benefits</span></h2>
+  <p class="lede">FOXO4-DRI is <strong>research-stage with zero human data</strong> — so this chapter is a progress report from the lab, honestly badged. Tier 1 (established) is thin <strong>by design</strong>: that thinness is the finding. The tiers are not equal, and they are not meant to be read as equal.</p>
+  <div class="evwrap">
+    <div class="evtimer est reveal">
+      <span class="evbadge est">Tier 1 · Established</span>
+      <h3>What solid data actually shows</h3>
+      <p>Repeatable <strong>cell and tissue</strong> findings — the entire established file.</p>
+      <ul>
+        <li><strong>FOXO4–p53 disruption in cells.</strong> In senescent cells, the peptide <strong>breaks the FOXO4–p53 grip</strong> — measured directly and reproducibly (Baar et al., Cell 2017).</li>
+        <li><strong>Selective killing of senescent cells.</strong> Freed from FOXO4, p53 orders <strong>apoptosis</strong> — while healthy neighboring cells are spared, <strong>in dishes and tissues</strong>.</li>
+      </ul>
+      <div class="layman"><span class="ldot" aria-hidden="true"></span><span class="llabel">Think of it this way:</span>tier 1 is the <strong>lock-and-key demo at a trade show</strong> — the key turns, the lock opens, the door swings. Impressive and real. But the demo is in a showroom, not your building: nobody has installed this lock in a human.</div>
+      <p style="font-size:.85rem;color:var(--faint)">The honest ceiling: <strong>zero established human benefits.</strong> The human-trials rung of the ladder is visibly empty — nothing here has been shown in people.</p>
+    </div>
+    <div class="evtimer emg reveal">
+      <span class="evbadge emg">Tier 2 · Predicted / Emerging</span>
+      <h3>The famous mice — and the predictions built on them</h3>
+      <p>Real results from <strong>one landmark study and its follow-ups</strong> — explicitly <strong>predicted and emerging</strong>, never proven for people.</p>
+      <ul>
+        <li><strong>Rejuvenated aged mice.</strong> Treated mice regained <strong>fitness, fur density, and kidney function</strong> — the before-and-after photos that broke aging Twitter.</li>
+        <li><strong>Proposed relevance to age-related decline.</strong> <em>Predicted:</em> if senescent-cell burden drives frailty, clearing them <em>might</em> slow decline — a hypothesis, not a finding.</li>
+        <li><strong>Possible healthspan angle.</strong> <em>Emerging:</em> healthier aging rather than longer life — a concept so far <strong>unmeasured in any species but mice</strong>.</li>
+      </ul>
+      <div class="layman"><span class="ldot" aria-hidden="true"></span><span class="llabel">Think of it this way:</span>tier 2 is a <strong>spectacular audition tape</strong> — the performance is genuinely remarkable, but the role (human medicine) hasn't been cast, the script (trials) hasn't been written, and most audition tapes never become movies.</div>
+    </div>
+    <div class="evtimer com reveal">
+      <span class="evbadge com">Tier 3 · Community</span>
+      <h3>What longevity forums discuss</h3>
+      <div class="ulegend"><span class="udot" role="img" aria-label="Unverified anecdote"></span><p><strong>Unverified anecdotes</strong> — paraphrased recurring themes from forums and social media: not verified, not evidence.</p></div>
+      <ul>
+        <li><span class="udot" role="img" aria-label="Unverified anecdote" style="margin-right:.4rem"></span><strong>Awe at the mice, silence on the humans.</strong> The dominant theme is <strong>excitement about results nobody can replicate in themselves</strong> — there are no credible human use-benefit stories.</li>
+        <li><span class="udot" role="img" aria-label="Unverified anecdote" style="margin-right:.4rem"></span><strong>"When human trials?"</strong> — the community's own verdict: the upside stays <strong>hypothetical until trials exist</strong>.</li>
+        <li><span class="udot" role="img" aria-label="Unverified anecdote" style="margin-right:.4rem"></span><strong>DIY whispers.</strong> A darker thread speculates about self-synthesis — <strong>stories-not-data, and a danger signal</strong>, never a benefit.</li>
+      </ul>
+      <div class="layman"><span class="ldot" aria-hidden="true"></span><span class="llabel">Think of it this way:</span>this tier is <strong>applause for a trailer</strong> — loud, sincere, and about a film nobody has seen. Read it as culture, not evidence.</div>
+    </div>
+  </div>
+</section>
+<mini-poll slug="foxo4-dri-mini-benefits"
+  data-question="Which benefit tier carries the most weight for you?"
+  data-answers='[["🧪", "Established cell data"], ["🐭", "The mouse results — emerging"], ["💬", "Community discussion"], ["⚖️", "The honest thinness"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 8 ============ -->
+<section class="chapter" id="ch8">
+  <span class="eyebrow"><span class="n">08</span>Who it may suit</span>
+  <h2>Who it may suit — <span class="hl">and who it should not</span></h2>
+  <p class="lede">FOXO4-DRI has <strong>no established medical indications</strong> — no approval, no trials, no patients. This chapter maps who the <strong>research</strong> involves, and where the caution lines sit.</p>
+  <div class="safety-grid">
+    <div class="suit yes reveal">
+      <h3>May be relevant for</h3>
+      <p>Populations studied in research and goals the compound is investigated for.</p>
+      <ul>
+        <li><strong>Aging-biology researchers</strong> — geroscientists studying senescence, FOXO4–p53 biology, and senolytic selectivity use it as a <strong>research tool</strong>, not a treatment.</li>
+        <li><strong>Drug-development watchers</strong> — the 2017 result made it a <strong>landmark case study</strong> in how one mouse paper can move a field.</li>
+        <li><strong>Goals it is investigated for</strong> — selective senescent-cell clearance, healthspan biology — all <strong>preclinical</strong>, none shown in people.</li>
+      </ul>
+    </div>
+    <div class="suit no reveal">
+      <h3>May not suit / extra caution</h3>
+      <p>A compound designed to <strong>kill cells</strong> has the steepest caution curve on this site.</p>
+      <ul>
+        <li><strong>Anyone considering self-experimentation</strong> — a cell-killing peptide of unknown purity is <strong>the worst gray-market category</strong>; selectivity in mice is not selectivity in you.</li>
+        <li><strong>People expecting a treatment</strong> — there is nothing to take, no protocol, no dose; the human chapter was never written.</li>
+        <li><strong>Anyone with cancer-risk concerns</strong> — meddling with <strong>p53 signaling</strong>, the genome's guardian, is inherently high-stakes.</li>
+        <li><strong>Wellness seekers</strong> — senolytics are <strong>drug-territory cell killers</strong>, not supplements or tonics.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bridge reveal"><strong>This is general information, not personal medical advice.</strong> FOXO4-DRI has no established medical indications — nothing here is a recommendation for or against anything. Any health decision should go through a licensed clinician who knows your individual situation.</div>
+</section>
+<mini-poll slug="foxo4-dri-mini-fit"
+  data-question="Did this chapter clarify who FOXO4-DRI is — and isn't — for?"
+  data-answers='[["🧭", "Yes — researchers only"], ["🤔", "Still undecided"], ["📚", "Need human trials first"], ["⚖️", "Clarified the limits"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 9 ============ -->
+<section class="chapter" id="ch9">
+  <span class="eyebrow"><span class="n">09</span>Risks & unknowns</span>
   <h2>Risks & <span class="hl">unknowns</span></h2>
   <p class="lede">A compound designed to <strong>destroy cells</strong> — the risk conversation starts at a higher pitch.</p>
   <div class="safety-grid">
@@ -694,84 +1034,73 @@ mini-poll { display: block; }
     <div class="scard lvl-unknown reveal"><span class="level">Unknown</span><h4>DIY danger</h4><p><strong>Unknown:</strong> unregulated versions would be <strong>cell-killing drugs of unknown purity</strong> — the worst category for gray-market error.</p></div>
   </div><div class="plain reveal"><div class="plabel">Plain English</div><p>Cell-killers get <strong>no benefit of the doubt</strong>. The mouse selectivity was beautiful; human biology is where beautiful selectivities go to be tested.</p></div>
 </section>
-<mini-poll slug="foxo4-dri-mini-ch6"
+<mini-poll slug="foxo4-dri-mini-ch9"
   data-question="Biggest worry?"
   data-answers='[["🛡️", "Messing with p53"], ["🎯", "Killing the wrong cells"], ["🧪", "Zero human safety data"], ["❓", "All of it"]]'>
 </mini-poll>
 
-<!-- ============ CHAPTER 7 ============ -->
-<section class="chapter" id="ch7">
-  <span class="eyebrow"><span class="n">07</span>Glossary</span>
-  <h2>Speak <span class="hl">senolytic</span></h2>
-  <p class="lede">Eleven terms, each with the science, an example, and a plain-English translation. Tap any term to expand it.</p>
+<!-- ============ CHAPTER 10 ============ -->
+<section class="chapter" id="ch10">
+  <span class="eyebrow"><span class="n">10</span>Glossary</span>
+  <h2>Understanding <span class="hl">FOXO4-DRI</span> Terminology</h2>
+  <p class="lede">Eleven terms, each with a scientific definition and a plain-English translation. Tap any term to expand it.</p>
   <div class="gloss">
-<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e983f922"/><circle cx="24" cy="24" r="11" fill="none" stroke="#e983f9" stroke-width="2.5"/><circle cx="24" cy="24" r="3.5" fill="#e983f9"/></svg><span class="term">FOXO4-DRI</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>A D-retro-inverso peptide copying FOXO4’s p53-binding region; breaks the FOXO4–p53 interaction in senescent cells, triggering their death.</p>
-      <p class="gex"><span class="gslabel">Example</span>The peptide this page is about — the mirror-image eviction notice.</p>
-      <div class="plain"><span class="plabel">Plain English</span>A backwards, upside-down peptide that evicts zombie cells.</div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e983f922"/><circle cx="24" cy="24" r="11" fill="none" stroke="#838ef9" stroke-width="2.5"/><circle cx="24" cy="24" r="3.5" fill="#838ef9"/></svg><span class="term">FOXO4-DRI</span><span class="plus">+</span></button><div class="g-a">
+      <p class="gsci"><span class="gslabel">The science</span>A synthetic peptide engineered as a shortened copy of the region of the FOXO4 protein that binds p53, built in the D-retro-inverso form — its amino acid sequence is reversed and composed entirely of mirror-image D-amino acids, which makes it resistant to the enzymes that would normally break a peptide down. In senescent cells, where FOXO4 holds p53 captive and inactive, the peptide competes for the same binding site, breaks the FOXO4–p53 interaction, and sets p53 free. Once released, p53 can initiate apoptosis, so senescent cells that depended on FOXO4 for survival undergo programmed death. All reported effects come from preclinical work in cell cultures and mice; no human trials have been completed or published.</p>
+      <div class="plain"><span class="plabel">Plain English</span>FOXO4-DRI is a laboratory-made peptide designed to copy one small piece of a natural protein called FOXO4. In worn-out "zombie" cells, FOXO4 grabs onto a self-destruct protein called p53 and holds it still; the peptide barges in, takes FOXO4's place, and lets p53 give the kill order. It is built back-to-front out of mirror-image building blocks, which makes it much harder for the body's enzymes to chew up than an ordinary peptide. Everything we know about it comes from lab dishes and mice — it has never been tested in people, so none of this is a proven human effect.</div>
     </div></div>
 <div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v2" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#ed99fa22"/><path d="M8 32c5-9 9-14 16-14s11 5 16 14" fill="none" stroke="#ed99fa" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="14" r="4" fill="none" stroke="#ed99fa" stroke-width="2.5"/></svg><span class="term">Senescent cell</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>A worn-out cell that has stopped dividing but resists dying — lingering and secreting inflammatory signals.</p>
-      <p class="gex"><span class="gslabel">Example</span>The target — the “zombie” the peptide hunts.</p>
-      <div class="plain"><span class="plabel">Plain English</span>A retired cell that won’t leave the office, complaining loudly.</div>
+      <p class="gsci"><span class="gslabel">The science</span>A senescent cell is a cell that has entered a state of permanent growth arrest — it has stopped dividing in response to DNA damage, stress, or aging, yet resists undergoing programmed death. These cells remain metabolically active and secrete a mixture of inflammatory signals, enzymes, and growth factors known collectively as the senescence-associated secretory phenotype (SASP). Through SASP signaling they can disturb neighboring healthy cells and contribute to age-related tissue dysfunction. Because they linger instead of clearing themselves, senescent cells accumulate in tissues over time and are the intended target of senolytic research.</p>
+      <div class="plain"><span class="plabel">Plain English</span>A senescent cell is a worn-out cell that has stopped working properly but refuses to die — often nicknamed a "zombie cell." Instead of quietly clearing out, it hangs around pumping out inflammatory signals that can bother the healthy cells next to it. These cells build up in the body over time and are thought to contribute to age-related wear and tear. They are the entire reason senolytic drugs like FOXO4-DRI are being researched in the first place.</div>
     </div></div>
-<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#922c9822"/><path d="M10 24h28M24 10v28" fill="none" stroke="#922c98" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">Senolytic</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>A drug that selectively destroys senescent cells.</p>
-      <p class="gex"><span class="gslabel">Example</span>The category — cell-killers with a very specific hit list.</p>
-      <div class="plain"><span class="plabel">Plain English</span>Zombie-cell assassins — drugs, not supplements.</div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#922c9822"/><path d="M10 24h28M24 10v28" fill="none" stroke="#6f982c" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">Senolytic</span><span class="plus">+</span></button><div class="g-a">
+      <p class="gsci"><span class="gslabel">The science</span>A senolytic is a drug or compound designed to selectively destroy senescent cells while sparing healthy ones. The concept rests on the hypothesis that clearing accumulated senescent cells — and with them their inflammatory SASP signaling — could improve tissue function and ease aspects of aging. FOXO4-DRI is one experimental senolytic candidate; other approaches, such as the dasatinib + quercetin combination, pursue the same goal through different pathways. The field remains overwhelmingly preclinical, and no senolytic has yet been proven safe and effective in people through completed human trials.</p>
+      <div class="plain"><span class="plabel">Plain English</span>A senolytic is a drug designed to hunt down worn-out zombie cells and destroy them while leaving healthy cells untouched. The idea is that clearing these cells — along with the inflammatory noise they broadcast — could help tissues work better. FOXO4-DRI is one experimental attempt at this; other candidates try to do it through completely different routes. It is still early-stage research, not an established treatment, and nothing in this category has proven itself in people yet.</div>
     </div></div>
-<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e983f922"/><path d="M12 36V12m0 0h20v12H12m20 0v12" fill="none" stroke="#e983f9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">FOXO4</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>A transcription-factor protein that, in senescent cells, latches onto p53 and blocks its kill order.</p>
-      <p class="gex"><span class="gslabel">Example</span>The handshake partner — the grip the decoy copies.</p>
-      <div class="plain"><span class="plabel">Plain English</span>A protein squatter’s bodyguard, holding p53 back.</div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e983f922"/><path d="M12 36V12m0 0h20v12H12m20 0v12" fill="none" stroke="#838ef9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">FOXO4</span><span class="plus">+</span></button><div class="g-a">
+      <p class="gsci"><span class="gslabel">The science</span>FOXO4 is a transcription-factor protein, a member of the FOXO family that regulates genes involved in stress resistance, metabolism, and cell survival. In senescent cells it binds directly to the tumor-suppressor protein p53 and holds it inactive, preventing p53 from triggering programmed cell death. This grip is what lets senescent cells persist despite the damage that would ordinarily mark them for destruction. FOXO4-DRI was designed to copy the p53-binding region of FOXO4 and compete with it, breaking the hold.</p>
+      <div class="plain"><span class="plabel">Plain English</span>FOXO4 is a natural protein that helps control which genes a cell switches on or off. In zombie cells it does something very specific: it grabs onto the cell's self-destruct protein, p53, and holds it still so the damaged cell never gets the order to die. That grip is the whole reason zombie cells survive. FOXO4-DRI is a copy of FOXO4's grabbing end — a decoy that steals the handshake away from the real thing.</div>
     </div></div>
 <div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v2" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#ed99fa22"/><path d="M24 8l14 24H10z" fill="none" stroke="#ed99fa" stroke-width="2.5" stroke-linejoin="round"/><circle cx="24" cy="26" r="3" fill="#ed99fa"/></svg><span class="term">p53</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>“Guardian of the genome” — the tumor-suppressor protein that orders damaged cells to self-destruct.</p>
-      <p class="gex"><span class="gslabel">Example</span>The freed executioner — once released from FOXO4, it does its job.</p>
-      <div class="plain"><span class="plabel">Plain English</span>The cell’s cancer guardian and chief executioner.</div>
+      <p class="gsci"><span class="gslabel">The science</span>p53 is a tumor-suppressor protein often called the "guardian of the genome." When a cell accumulates serious DNA damage, p53 coordinates the response: it can pause the cell cycle, order repairs, or — if the damage is beyond repair — initiate apoptosis, the cell's programmed death routine. In senescent cells, FOXO4 binds p53 and keeps it sequestered, which is a major reason these cells resist dying. FOXO4-DRI's designed role is to break that interaction and set p53 free so the death signal can proceed.</p>
+      <div class="plain"><span class="plabel">Plain English</span>p53 is the cell's quality inspector — scientists call it the "guardian of the genome." When a cell is damaged beyond repair, p53 is the one that gives the order for a clean, orderly shutdown. In zombie cells, FOXO4 is holding p53 by the arm so it can't give that order. FOXO4-DRI's job is to pry FOXO4 off — freeing p53 to do what it was meant to do all along.</div>
     </div></div>
-<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#922c9822"/><path d="M8 14h32M8 24h32M8 34h20" fill="none" stroke="#922c98" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">D-retro-inverso</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>A peptide built from mirror-image (D) amino acids in reverse order — same shape, indigestible to enzymes.</p>
-      <p class="gex"><span class="gslabel">Example</span>The engineering trick — why the peptide survives.</p>
-      <div class="plain"><span class="plabel">Plain English</span>Building the key backwards so the lock-pickers can’t copy it.</div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#922c9822"/><path d="M8 14h32M8 24h32M8 34h20" fill="none" stroke="#6f982c" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">D-retro-inverso</span><span class="plus">+</span></button><div class="g-a">
+      <p class="gsci"><span class="gslabel">The science</span>D-retro-inverso is a peptide engineering strategy in which the amino acid sequence is reversed end-to-end and every residue is built from the mirror-image D form of the amino acid. The resulting molecule presents roughly the same three-dimensional shape and side-chain arrangement as the original L-amino-acid peptide, so it can still fit the same binding site. Because the body's enzymes recognize only standard L-amino acids, the D-retro-inverso version resists being broken down. FOXO4-DRI uses exactly this design so it survives long enough to reach and act on its target.</p>
+      <div class="plain"><span class="plabel">Plain English</span>D-retro-inverso is a clever way to build a peptide backwards — the chain is reversed and made from mirror-image building blocks. It still has the same overall shape, so it fits the same lock, but the body's enzymes don't recognize it and mostly can't chew it up. That's how FOXO4-DRI survives long enough to do its job instead of being digested like an ordinary peptide. Think of it as a key cut in mirror-image: same teeth, but the lock-picks can't copy it.</div>
     </div></div>
-<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e983f922"/><rect x="12" y="12" width="24" height="24" rx="6" fill="none" stroke="#e983f9" stroke-width="2.5"/><path d="M18 24h12" stroke="#e983f9" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">D-amino acid</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>The mirror image of a standard (L) amino acid — biology’s enzymes generally can’t process them.</p>
-      <p class="gex"><span class="gslabel">Example</span>The bricks — every link of FOXO4-DRI is one.</p>
-      <div class="plain"><span class="plabel">Plain English</span>A backwards Lego brick — same shape, wrong thread.</div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e983f922"/><rect x="12" y="12" width="24" height="24" rx="6" fill="none" stroke="#838ef9" stroke-width="2.5"/><path d="M18 24h12" stroke="#838ef9" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">D-amino acid</span><span class="plus">+</span></button><div class="g-a">
+      <p class="gsci"><span class="gslabel">The science</span>A D-amino acid is the mirror-image form of a standard amino acid. Living systems overwhelmingly build proteins from L-amino acids, so most of the enzymes that cut or process proteins cannot recognize their D-shaped counterparts. Incorporating D-amino acids into a peptide therefore makes it resistant to enzymatic degradation and extends its working life. Every residue in FOXO4-DRI is a D-amino acid — that is what the "D" in its name stands for.</p>
+      <div class="plain"><span class="plabel">Plain English</span>An amino acid is one of the building blocks of proteins, and each one comes in two mirror-image forms. Life almost always uses the L form, so the body's recycling enzymes don't know what to do with the D form. That makes D-amino acids much harder to break down. FOXO4-DRI is built entirely out of them — and that "D" in its name is exactly what it refers to.</div>
     </div></div>
 <div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v2" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#ed99fa22"/><path d="M14 34c8-14 12-14 20 0" fill="none" stroke="#ed99fa" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="34" r="3" fill="#ed99fa"/><circle cx="34" cy="34" r="3" fill="#ed99fa"/></svg><span class="term">Apoptosis</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>Programmed cell death — the orderly self-dismantling p53 commands.</p>
-      <p class="gex"><span class="gslabel">Example</span>The intended ending — zombie cells finally taking the exit.</p>
-      <div class="plain"><span class="plabel">Plain English</span>Cellular seppuku — tidy self-destruction.</div>
+      <p class="gsci"><span class="gslabel">The science</span>Apoptosis is the regulated process of programmed cell death, in which a cell dismantles itself through an orderly, step-by-step sequence. The cell shrinks, its DNA is systematically fragmented, and the remains are packaged into small membrane-bound vesicles that neighboring cells clear away. Because the cell's contents are contained rather than spilled, apoptosis avoids triggering the inflammation that messy, uncontrolled cell death would cause. In the FOXO4-DRI story, apoptosis is the endpoint that p53 initiates once FOXO4 releases its grip on it.</p>
+      <div class="plain"><span class="plabel">Plain English</span>Apoptosis is the cell's built-in self-destruct routine — an orderly, deliberate shutdown, not an accident. Instead of bursting and making a mess, the cell shrinks, chops up its own DNA, and packages the leftovers for tidy disposal by its neighbors. That's why it's called "programmed" cell death: it's controlled from start to finish. When FOXO4-DRI frees p53, apoptosis is the order p53 finally gets to carry out.</div>
     </div></div>
-<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#922c9822"/><circle cx="24" cy="24" r="11" fill="none" stroke="#922c98" stroke-width="2.5"/><circle cx="24" cy="24" r="3.5" fill="#922c98"/></svg><span class="term">Selectivity</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>Hitting only the intended target — the make-or-break property of any cell-killer.</p>
-      <p class="gex"><span class="gslabel">Example</span>The whole bet — proven in mice, unproven in people.</p>
-      <div class="plain"><span class="plabel">Plain English</span>Only shooting the bad guys — harder than it sounds.</div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#922c9822"/><circle cx="24" cy="24" r="11" fill="none" stroke="#6f982c" stroke-width="2.5"/><circle cx="24" cy="24" r="3.5" fill="#6f982c"/></svg><span class="term">Selectivity</span><span class="plus">+</span></button><div class="g-a">
+      <p class="gsci"><span class="gslabel">The science</span>In drug research, selectivity is the degree to which a treatment affects only its intended target while sparing everything else. For a senolytic like FOXO4-DRI, selectivity means killing senescent cells without harming healthy ones — the make-or-break property of any cell-killing drug. The published preclinical work showed exactly this discrimination in cell cultures and mice, where the peptide triggered death in senescent cells but left healthy cells alone. Whether that discrimination holds in a far more complex human body is untested, because FOXO4-DRI has never been studied in people.</p>
+      <div class="plain"><span class="plabel">Plain English</span>Selectivity is a drug's ability to hit only the intended target and leave everything else alone. For FOXO4-DRI that means killing zombie cells without harming healthy ones — and for a drug designed to kill cells, that discrimination is everything. In the lab and in mice, the peptide showed exactly that kind of precision. But human bodies are far more complex than mice, and the peptide has never been put to that test in people — so it's the property we know least about.</div>
     </div></div>
-<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e983f922"/><path d="M8 32c5-9 9-14 16-14s11 5 16 14" fill="none" stroke="#e983f9" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="14" r="4" fill="none" stroke="#e983f9" stroke-width="2.5"/></svg><span class="term">Frailty</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>Age-related loss of resilience — what clearing senescent cells is supposed to improve.</p>
-      <p class="gex"><span class="gslabel">Example</span>The mouse outcome — fitness regained, fur thickened.</p>
-      <div class="plain"><span class="plabel">Plain English</span>Becoming fragile with age — the thing being fought.</div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e983f922"/><path d="M8 32c5-9 9-14 16-14s11 5 16 14" fill="none" stroke="#838ef9" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="14" r="4" fill="none" stroke="#838ef9" stroke-width="2.5"/></svg><span class="term">Frailty</span><span class="plus">+</span></button><div class="g-a">
+      <p class="gsci"><span class="gslabel">The science</span>Frailty is a clinical state of age-related decline in which the body's physiological reserves shrink and its resilience to stress weakens. Frail individuals tire more easily, recover more slowly from illness or injury, and are more vulnerable to falls, disability, and hospitalization. Because senescent cells are believed to contribute to this decline through their inflammatory SASP signaling, clearing them is hypothesized to ease frailty. In the mouse experiments behind FOXO4-DRI's fame, treated old mice regained physical fitness and fur density — but whether anything like that would occur in humans is untested.</p>
+      <div class="plain"><span class="plabel">Plain English</span>Frailty is the name for becoming physically fragile with age — less energy, slower recovery, and more vulnerability to illness and injury. Researchers suspect that accumulated zombie cells contribute to it, which is why clearing those cells is seen as a possible way to push back against it. In the famous mouse study, treated elderly mice got fitter and their fur grew back thicker. But mice aren't people, and no one knows whether any of that would happen in humans.</div>
     </div></div>
 <div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v2" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#ed99fa22"/><path d="M10 24h28M24 10v28" fill="none" stroke="#ed99fa" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">Preclinical</span><span class="plus">+</span></button><div class="g-a">
-      <p class="gsci"><span class="gslabel">The science</span>Research before human trials — where every FOXO4-DRI result lives.</p>
-      <p class="gex"><span class="gslabel">Example</span>The entire file — mice, dishes, and one famous paper.</p>
-      <div class="plain"><span class="plabel">Plain English</span>Lab and animal studies — promising, not proof.</div>
+      <p class="gsci"><span class="gslabel">The science</span>Preclinical describes the stage of research that takes place before any human trials — in test tubes, cell cultures, and animals. Preclinical studies can show that a compound works in principle and give early indications of its behavior and safety profile, but they cannot prove how it will act in people. Every reported result for FOXO4-DRI, including the widely covered mouse experiments, sits at this stage; the compound has never entered human testing. A promising preclinical result is a starting point for further research, not proof of an effect in humans.</p>
+      <div class="plain"><span class="plabel">Plain English</span>"Preclinical" means all the research that happens before anything is tried in people — lab dishes, cell samples, and animals. It can show that an idea works in principle, but it can't tell us what will happen in a human body. Everything known about FOXO4-DRI, including the famous mouse results, lives at this stage. It's the first chapter of a story that hasn't reached people yet — promising, but not proof.</div>
     </div></div>
   </div>
 </section>
-<mini-poll slug="foxo4-dri-mini-ch7"
+<mini-poll slug="foxo4-dri-mini-ch10"
   data-question="Which term was newest to you?"
   data-answers='[["🧟", "Senolytic"], ["🪞", "D-retro-inverso"], ["🤝", "FOXO4"], ["🛡️", "p53"]]'>
 </mini-poll>
 
-<!-- ============ CHAPTER 8 ============ -->
-<section class="chapter" id="ch8">
-  <span class="eyebrow"><span class="n">08</span>Takeaways</span>
+<!-- ============ CHAPTER 11 ============ -->
+<section class="chapter" id="ch11">
+  <span class="eyebrow"><span class="n">11</span>Takeaways</span>
   <h2>The <span class="hl">bottom line</span></h2>
-  <p class="lede">Eight chapters, distilled. A brilliant mouse result, a clever mirror-image design — and a human record that doesn’t exist.</p>
+  <p class="lede">Eleven chapters, distilled. A brilliant mouse result, a clever mirror-image design — and a human record that doesn’t exist.</p>
   <div class="take-grid">
     <div class="take reveal"><div class="tk">🧟</div><h4>Zombie-cell hunter</h4><p>Designed to clear <strong>senescent cells</strong> — worn-out cells that inflame their neighborhoods.</p></div>
     <div class="take reveal"><div class="tk">🪞</div><h4>Mirror-image engineering</h4><p><strong>D-retro-inverso</strong> construction — enzymes can’t digest it, so it persists.</p></div>
@@ -782,7 +1111,9 @@ mini-poll { display: block; }
     <div class="take reveal"><div class="tk">🛡️</div><h4>p53 caution</h4><p>Meddling with the <strong>cancer guardian’s</strong> signaling is inherently high-stakes.</p></div>
     <div class="take reveal"><div class="tk">💬</div><h4>Awe, correctly shaped</h4><p>Amazed by mice, <strong>quiet on humans</strong> — the right belief shape.</p></div>
     <div class="take reveal"><div class="tk">🚫</div><h4>Not a DIY project</h4><p>An unregulated <strong>cell-killing peptide</strong> is the worst gray-market category.</p></div>
+    <div class="take reveal"><div class="tk">🔀</div><h4>A unique weapon</h4><p>FOXO4-DRI breaks a <strong>protein handshake</strong>; other senolytics (dasatinib/quercetin, navitoclax, fisetin) work by <strong>different mechanisms</strong> — results don’t transfer between them.</p></div>
     <div class="take reveal"><div class="tk">🔭</div><h4>What would change the story</h4><p>A <strong>phase 1 human trial</strong> — safety and selectivity in people. Everything else is mice.</p></div>
+    <div class="take reveal"><div class="tk">🧪</div><h4>Benefits in tiers</h4><p>Established in cells, <strong>predicted in mice</strong>, discussed in forums — weighted accordingly, never equally.</p></div>
   </div><div class="limits reveal">
     <h3>What this page does not do</h3>
     <ul>
@@ -792,7 +1123,8 @@ mini-poll { display: block; }
     </ul>
   </div>
 </section>
-<mini-poll slug="foxo4-dri-mini-ch8"
+<h3 class="rate-h">⭐ How would you rate this infographic?</h3>
+<mini-poll slug="foxo4-dri-mini-ch11"
   data-question="How would you rate this infographic?"
   data-answers='[["😍", "⭐⭐⭐⭐⭐ · Loved it"], ["🙂", "⭐⭐⭐⭐ · Good stuff"], ["😐", "⭐⭐⭐ · It’s okay"]]'>
 </mini-poll>
@@ -815,6 +1147,7 @@ mini-poll { display: block; }
 (function(){
 "use strict";
 var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(reduced){window.addEventListener("load",function(){document.querySelectorAll("svg").forEach(function(sv){try{if(!sv.animationsPaused())sv.pauseAnimations();}catch(e){}});});}
 /* ---------- theme ---------- */
 function setTheme(t){
   document.documentElement.setAttribute("data-theme",t);
@@ -835,7 +1168,7 @@ setTheme(document.documentElement.getAttribute("data-theme")==="light"?"light":"
   function size(){W=window.innerWidth;H=window.innerHeight;svg.setAttribute("viewBox","0 0 "+W+" "+H);}
   size();window.addEventListener("resize",size);
   var NS="http://www.w3.org/2000/svg";
-  var colors=["#e983f9", "#822787", "#ed99fa", "#701a75", "#922c98", "#e983f9"];
+  var colors=["#838ef9", "#273087", "#ed99fa", "#1a2275", "#6f982c", "#838ef9"];
   for(var i=0;i<140;i++){
     var c=document.createElementNS(NS,"circle");
     var col=colors[i%colors.length];
@@ -885,7 +1218,7 @@ setTheme(document.documentElement.getAttribute("data-theme")==="light"?"light":"
       var l=document.createElementNS(NS,"line");
       l.setAttribute("x1",x.toFixed(1));l.setAttribute("y1",yy.toFixed(1));
       l.setAttribute("x2",x2.toFixed(1));l.setAttribute("y2",yy2.toFixed(1));
-      l.setAttribute("stroke","#1a1821");l.setAttribute("stroke-width","3");
+      l.setAttribute("stroke","#1e2118");l.setAttribute("stroke-width","3");
       g.insertBefore(l,g.firstChild);
     }
   }
@@ -942,7 +1275,7 @@ var bar=document.getElementById("progress"),
     tocBar=document.getElementById("tocBar"),tocPct=document.getElementById("tocPct"),
     links=Array.prototype.slice.call(document.querySelectorAll(".toc a, nav.chapters a")),
     rail=document.getElementById("rail"),
-    sections=["ch1","ch2","ch3","ch4","ch5","ch6","ch7","ch8"].map(function(id){return document.getElementById(id);}),
+    sections=["ch1","ch2","ch3","ch4","ch5","ch6","ch7","ch8","ch9","ch10","ch11"].map(function(id){return document.getElementById(id);}),
     pill=document.querySelector(".toc-pill"),cur=-1,ticking=false;
 function easeWidth(el,v){el.style.width=v+"%";}
 function update(){
@@ -985,7 +1318,7 @@ function fireConfetti(){
   var c=document.getElementById("confetti"),ctx=c.getContext("2d");
   c.width=window.innerWidth;c.height=window.innerHeight;
   c.classList.add("show");
-  var cols=["#e983f9", "#ed99fa", "#922c98", "#fbbf24", "#edf0f9"],parts=[];
+  var cols=["#838ef9", "#ed99fa", "#6f982c", "#26f9df", "#f7edf9"],parts=[];
   for(var i=0;i<45;i++)parts.push({x:Math.random()*c.width,y:-20-Math.random()*c.height*0.25,
     w:4+Math.random()*4,h:5+Math.random()*5,c:cols[i%cols.length],
     vy:0.7+Math.random()*1.1,ph:Math.random()*Math.PI*2,sw:0.4+Math.random()*0.8,
@@ -1021,12 +1354,12 @@ fio.observe(document.querySelector("footer"));
 /* Mini-poll backend config. Empty = preview mode (local votes, 3-day cooldown).
    To go live: fill in your Supabase project URL + anon key (see poll-admin README). */
 window.MINI_POLL_CONFIG = { supabaseUrl: "", anonKey: "", turnstileSiteKey: "",
-  accents: ["#e983f9", "#ed99fa", "#86288b", "#701a75", "#922c98", "#efa6fb", "#fbbf24", "#1e1b4b", "#59145d"] };
+  accents: ["#838ef9", "#ed99fa", "#28318b", "#1a2275", "#6f982c", "#a6aefb", "#26f9df", "#451b4b", "#141b5d"] };
 </script>
 <script>
 /* Mini-poll web component — vanilla JS, no dependencies.
    Usage:
-     <mini-poll slug="foxo4-dri-mini-ch1"
+     <mini-poll slug="foxo4-dri-mini-recap"
        data-question="Had you heard of FOXO4-DRI before today?"
        data-answers='[["🆕","No — brand new to me"],["👀","Heard the name"]]'>
      </mini-poll>
@@ -1105,8 +1438,8 @@ window.MINI_POLL_CONFIG = { supabaseUrl: "", anonKey: "", turnstileSiteKey: "",
      Palette comes from window.MINI_POLL_CONFIG.accents when the page sets one,
      otherwise the default nine-color set. */
   var ACCENTS = (window.MINI_POLL_CONFIG && window.MINI_POLL_CONFIG.accents) ||
-                ['#fdba74', '#a3e635', '#fb923c', '#b037ed', '#f472b6',
-                 '#a3e635', '#fbbf24', '#fb7185', '#22d3ee'];
+                ['#76fbeb', '#a3e635', '#3dfae2', '#3748ed', '#727ef4',
+                 '#a3e635', '#26f9df', '#717efb', '#22d3ee'];
   function pollAccents(slug) {
     var m = /ch(\d+)/.exec(slug || '');
     var i = m ? parseInt(m[1], 10) - 1 : 0;
